@@ -23,6 +23,8 @@ The supervisor should be able to see, at assigned points, the progress of each t
 
 ## A. Algorithm Overview
 
+Our solution to solve the WGUPS Delivery Routing Problem is to develop a delivery routing program that utilizes a greedy algorithm to find an efficient route and delivery distribution.
+
 ## B. Data Structure
 
 ### 1. Data Structure Relationship to Components
