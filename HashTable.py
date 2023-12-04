@@ -46,6 +46,19 @@ class HashTable:
 
         self.size += 1
 
+    # update() updates the value of the key
+    def update(self, key, value):
+        hashedIndex = self.hash_key(key)
+        key_value_node = Node(key, value)
+
+        cur = self.table[hashedIndex]
+        while cur != None:
+            if cur.key == key:
+                cur.value = key_value_node.value
+                return
+            cur = cur.next
+
+
     # get() returns the value of the key
     def get(self, key):
         hashedIndex = self.hash_key(key)
@@ -56,7 +69,7 @@ class HashTable:
                 return cur.value
             cur = cur.next
         return None
-        
+
     # remove() removes the node with the key
     def remove(self, key):
         hashedIndex = self.hash_key(key)
