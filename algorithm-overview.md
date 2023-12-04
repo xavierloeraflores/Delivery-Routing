@@ -49,4 +49,6 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 ### 7. Key Justification
 
+The delivery routing system will utilize the package's package ID as the key to access the package's data. The package ID is a unique identifier for each package and is a very efficient way to access the package's data from the hash table.
+
 ## Resources
