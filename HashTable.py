@@ -6,8 +6,6 @@ class Node:
         self.value = value
         self.next = None
 
-
-
 class HashTable:
     # Constructor w/ initial capacity of 40 packages
     def __init__(self, cap=capacity):
@@ -25,7 +23,6 @@ class HashTable:
     def __str__(self):
         return str(self.table)
 
-    
     # hash_key() returns the hashed key
     def hash_key(self, key):
         hashed = hash(key) % self.cap
@@ -43,7 +40,6 @@ class HashTable:
             while cur.next != None:
                 cur = cur.next
             cur.next = key_value_node
-
         self.size += 1
 
     # update() updates the value of the key
@@ -57,7 +53,6 @@ class HashTable:
                 cur.value = key_value_node.value
                 return
             cur = cur.next
-
 
     # get() returns the value of the key
     def get(self, key):
