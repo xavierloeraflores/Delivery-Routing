@@ -1,4 +1,5 @@
 from HashTable import HashTable
+from CSVReader import CSVReader
 
 def main():
     newTable = HashTable(40)
@@ -20,5 +21,16 @@ def main():
     newTable.update("Key", "NewValue")
     print("Key:Key | Value: ", newTable.get("Key"))
     print('-------------------------')
+
+def testCSVReader():
+    csvReader = CSVReader("WGUPS Package File.xlsx")
+    result = csvReader.read()
+    print(result)
+    for row in result:
+        print(row)
+    # print(csvReader.read_as_dict())
+
 if __name__ == "__main__":
     main()
+    print("*************************")
+    testCSVReader()
