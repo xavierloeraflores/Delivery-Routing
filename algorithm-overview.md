@@ -47,11 +47,18 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 ### 6. Hash Table Strengths & Weaknesses
 
+Strengths:
+
+- Hash tables are very efficient for lookups since they can happen in constant time O(1).
+- Hash tables are also very efficient for insertions and deletions since they only need to change to update one array index for each operation as opposed to a linear data structure like an array or linked list which would need to update multiple indexes.
+- Hash tables are very flexible and can be used to store any type of data structure.
+- Hash tables feature collision resolution which handles the cases for multiple key-values hashing to the same index.
+
 Weaknesses:
 
 - Hash tables can be inefficient when there are a large number of collisions.
 - Hash tables do not allow null values
-- Hash tables have a limited capacity and will need to be resized if the number of elements exceeds the capacity.
+- Hash tables have a limited capacity and will need to be resized or utilize linked nodes if the number of elements exceeds the capacity.
 - Hash tables are unordered which do not allow for sorting and make it difficult to retrieve the data in a specific order.
 
 ### 7. Key Justification
