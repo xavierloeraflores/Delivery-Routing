@@ -11,8 +11,14 @@ def main():
 
     print('-------------------------')
     newTable.remove("Hello")
-    print(newTable)
     print("Key:Hello | Value: ", newTable.get("Hello"))
+    print('-------------------------')
+    print('-------------------------')
 
+    newTable.insert("Key", "OldValue")
+    print("Key:Key | Value: ", newTable.get("Key"))
+    newTable.update("Key", "NewValue")
+    print("Key:Key | Value: ", newTable.get("Key"))
+    print('-------------------------')
 if __name__ == "__main__":
     main()
