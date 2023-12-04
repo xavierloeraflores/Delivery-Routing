@@ -43,6 +43,16 @@ class HashTable:
             while cur.next != None:
                 cur = cur.next
             cur.next = key_value_node
-            
+
         self.size += 1
 
+    # get() returns the value of the key
+    def get(self, key):
+        hashedIndex = self.hash_key(key)
+        cur = self.table[hashedIndex]
+
+        while cur != None:
+            if cur.key == key:
+                return cur.value
+            cur = cur.next
+        return None
