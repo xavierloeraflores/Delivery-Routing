@@ -29,4 +29,20 @@ class HashTable:
     # hash_key() returns the hashed key
     def hash_key(self, key):
         hashed = hash(key) % self.cap
-        return hashed    
+        return hashed
+
+    # insert() inserts a new node into the table
+    def insert(self, key, value):
+        hashedIndex = self.hash_key(key)
+        key_value_node = Node(key, value)
+
+        if self.table[hashedIndex] == None:
+            self.table[hashedIndex] = key_value_node
+        else:
+            cur = self.table[hashedIndex]
+            while cur.next != None:
+                cur = cur.next
+            cur.next = key_value_node
+            
+        self.size += 1
+
