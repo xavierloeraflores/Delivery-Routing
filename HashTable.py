@@ -17,6 +17,6 @@ class HashTable:
         for i in range(cap):
             self.table.append(None)
     
-    def hash_value(self, key):
+    def hash_key(self, key):
         hashedValue = hash(key) % self.cap
         return hashedValue    
