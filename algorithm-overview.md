@@ -35,6 +35,8 @@ Our solution to solve the WGUPS Delivery Routing Problem is to develop a deliver
 
 ### 2. Programming Environment
 
+The programming environment features Python version 3.8.9 which is the ninth maintenance release of Python 3.8 released on April 2, 2021.
+
 ### 3. Space Time Complexity
 
 ### 4. Solution scalability & adaptability
