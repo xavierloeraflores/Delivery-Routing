@@ -56,3 +56,21 @@ class HashTable:
                 return cur.value
             cur = cur.next
         return None
+        
+    # remove() removes the node with the key
+    def remove(self, key):
+        hashedIndex = self.hash_key(key)
+        prev = None
+        cur = self.table[hashedIndex]
+        
+        while cur != None:
+            if cur.key == key:
+                if prev == None:
+                    self.table[hashedIndex] = cur.next
+                else:
+                    prev.next = cur.next
+                self.size -= 1
+                return
+            prev = cur
+            cur = cur.next
+            

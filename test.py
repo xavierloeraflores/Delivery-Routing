@@ -7,6 +7,12 @@ def main():
     print(hashedKey)
 
     print(newTable)
+    print("Key:Hello | Value: ", newTable.get("Hello"))
+
+    print('-------------------------')
+    newTable.remove("Hello")
+    print(newTable)
+    print("Key:Hello | Value: ", newTable.get("Hello"))
 
 if __name__ == "__main__":
     main()
