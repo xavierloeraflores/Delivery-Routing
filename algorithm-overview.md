@@ -45,7 +45,14 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 ### 5. Software Design Efficiency & Maintainability
 
-### 6. Data Structure Strengths & Weaknesses
+### 6. Hash Table Strengths & Weaknesses
+
+Weaknesses:
+
+- Hash tables can be inefficient when there are a large number of collisions.
+- Hash tables do not allow null values
+- Hash tables have a limited capacity and will need to be resized if the number of elements exceeds the capacity.
+- Hash tables are unordered which do not allow for sorting and make it difficult to retrieve the data in a specific order.
 
 ### 7. Key Justification
 
