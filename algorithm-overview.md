@@ -37,6 +37,8 @@ Our solution to solve the WGUPS Delivery Routing Problem is to develop a deliver
 
 The programming environment features Python version 3.8.9 which is the ninth maintenance release of Python 3.8 released on April 2, 2021.
 
+The programming environment is being ran within MacOS Monterey Version 12.0.1 on a 16 inch MacBook Pro with an Apple M1 Pro processor and 32GB of unified memory.
+
 ### 3. Space Time Complexity
 
 ### 4. Solution scalability & adaptability
