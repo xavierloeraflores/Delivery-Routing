@@ -1,7 +1,9 @@
+from HashTable import HashTable
+
 def main():
     newTable = HashTable(40)
-    hashedValue = newTable.hash_value("Hello")
-    print(hashedValue)
+    hashedKey = newTable.hash_key("Hello")
+    print(hashedKey)
 
 if __name__ == "__main__":
     main()
