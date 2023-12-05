@@ -1,5 +1,6 @@
 from HashTable import HashTable
 from CSVReader import CSVReader
+from Packages import Package, read_packages
 
 def main():
     newTable = HashTable(40)
@@ -35,8 +36,17 @@ def testCSVReader():
     for row in distances:
         print(row)
 
+def test_packages():
+    packages = read_packages()
+    for row in packages:
+        print(row)
+    print("-------------------------")
+    for row in packages:
+        package = Package(row)
+        print(package)
 
 if __name__ == "__main__":
-    main()
+    # main()
     print("*************************")
-    testCSVReader()
+    # testCSVReader()
+    test_packages()
