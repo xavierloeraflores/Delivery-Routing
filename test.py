@@ -23,7 +23,7 @@ def main():
     print('-------------------------')
 
 def testCSVReader():
-    csvReader = CSVReader("WGUPS Package File.xlsx")
+    csvReader = CSVReader("PackageFile.csv")
     result = csvReader.read()
     print(result)
     for row in result:
