@@ -23,12 +23,18 @@ def main():
     print('-------------------------')
 
 def testCSVReader():
-    csvReader = CSVReader("PackageFile.csv")
-    result = csvReader.read()
-    print(result)
-    for row in result:
+    package_file = CSVReader("PackageFile.csv")
+    packages = package_file.read()
+    for row in packages:
         print(row)
-    # print(csvReader.read_as_dict())
+    
+    print("-------------------------")
+    
+    distance_table = CSVReader("DistanceTable.csv")
+    distances = distance_table.read()
+    for row in distances:
+        print(row)
+
 
 if __name__ == "__main__":
     main()
