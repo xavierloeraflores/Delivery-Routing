@@ -25,6 +25,30 @@ class Package:
     def __str__(self):
         return f"{self.id}, {self.address}, {self.city}, {self.state}, {self.zip}, {self.deadline}, {self.weight}, {self.notes}"
 
+    def get_id(self):
+        return self.id
+    
+    def get_address(self):
+        return self.address
+    
+    def get_city(self):
+        return self.city
+    
+    def get_state(self):
+        return self.state
+    
+    def get_zip(self):
+        return self.zip
+    
+    def get_deadline(self):
+        return self.deadline
+    
+    def get_weight(self):
+        return self.weight
+    
+    def get_notes(self):
+        return self.notes
+
     def has_deadline(self):
         return self.deadline != "EOD"
     
