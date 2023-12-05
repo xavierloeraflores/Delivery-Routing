@@ -3,27 +3,27 @@ from CSVReader import CSVReader
 from Packages import Package, read_packages
 
 def main():
-    newTable = HashTable(40)
-    newTable.insert("Hello", "World")
-    hashedKey = newTable.hash_key("Hello")
-    print(hashedKey)
+    new_table = HashTable(40)
+    new_table.insert("Hello", "World")
+    hashed_key = new_table.hash_key("Hello")
+    print(hashed_key)
 
-    print(newTable)
-    print("Key:Hello | Value: ", newTable.get("Hello"))
+    print(new_table)
+    print("Key:Hello | Value: ", new_table.get("Hello"))
 
     print('-------------------------')
-    newTable.remove("Hello")
-    print("Key:Hello | Value: ", newTable.get("Hello"))
+    new_table.remove("Hello")
+    print("Key:Hello | Value: ", new_table.get("Hello"))
     print('-------------------------')
     print('-------------------------')
 
-    newTable.insert("Key", "OldValue")
-    print("Key:Key | Value: ", newTable.get("Key"))
-    newTable.update("Key", "NewValue")
-    print("Key:Key | Value: ", newTable.get("Key"))
+    new_table.insert("Key", "OldValue")
+    print("Key:Key | Value: ", new_table.get("Key"))
+    new_table.update("Key", "NewValue")
+    print("Key:Key | Value: ", new_table.get("Key"))
     print('-------------------------')
 
-def testCSVReader():
+def test_csv_reader():
     package_file = CSVReader("PackageFile.csv")
     packages = package_file.read()
     for row in packages:
@@ -48,5 +48,5 @@ def test_packages():
 if __name__ == "__main__":
     # main()
     print("*************************")
-    # testCSVReader()
+    # test_csv_reader()
     test_packages()
