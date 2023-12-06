@@ -8,6 +8,15 @@ def get_all_packages_status_at_time(time):
 def get_package_status_at_time(package_id, time):
     print("This function will print the status of a given package at a given time")
 
+def interface_loop():
+
+    return False
 
 class Main:
     print("Hello World")
+    
+    finish_program = False
+    while not finish_program:
+        finish_program = interface_loop()
+    
+    print("Goodbye World")
