@@ -9,6 +9,12 @@ def get_package_status_at_time(package_id, time):
     print("This function will print the status of a given package at a given time")
 
 def interface_loop():
+    print("=====================================================")
+    print("Please choose an option. Enter number and press enter.")
+    print("0. Exit")
+    print("1. Get completed delivery times and truck mileages")
+    print("2. Get all packages's status and truck mileages at a given time")
+    print("3. Get specific packages's status at a given time")
     try:
         choice = int(input("Please choose an option:"))
         if choice not in range(0, 4) or choice == 0:
