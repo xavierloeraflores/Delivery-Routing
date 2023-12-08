@@ -1,6 +1,6 @@
 from HashTable import HashTable
 from CSVReader import CSVReader
-from Packages import Package, read_packages
+from Package import Package, read_packages
 from PrintColor import print_red, print_yellow, print_blue, print_green
 
 def main():
