@@ -2,6 +2,8 @@
 # Name:         Xavier Alejandro Loera Flores
 # Date:         12/08/2023
 
+from PrintColor import print_red, print_yellow, print_blue, print_green
+
 def get_all_packages_status_at_time(time):
     print("This function will print the status of all packages at a given time")
 
@@ -26,14 +28,14 @@ def interface_loop():
         elif choice == 3:
             print("Option 3")
     except ValueError:
-        print("Invalid input")
+        print_red("Invalid input")
     return False
 
 class Main:
-    print("Package Delivery Routing Program")
+    print_green("Package Delivery Routing Program")
     
     finish_program = False
     while not finish_program:
         finish_program = interface_loop()
     
-    print("Closing Program")
+    print_red("Closing Program")
