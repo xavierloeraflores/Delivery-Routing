@@ -19,6 +19,20 @@ def get_address_list():
         idx += 1
     return address_list
 
+def get_address_by_id(address_id):
+    address_list = get_address_list()
+    for address in address_list:
+        if address.id == address_id:
+            return address
+    return None
+
+def get_address_by_street(street):
+    address_list = get_address_list()
+    for address in address_list:
+        if address.street == street:
+            return address
+    return None
+
 class Address:
     def __init__(self, id, street):
         self.id = id
