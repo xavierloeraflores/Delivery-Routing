@@ -22,3 +22,8 @@ class Truck:
         self.address = address_id
         self.depart_time = depart_time
         self.packages = packages
+
+    def set_address_id(self, address_id):
+        self.address_id = address_id
+    
+            

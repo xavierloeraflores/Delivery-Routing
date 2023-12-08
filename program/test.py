@@ -1,6 +1,7 @@
 from HashTable import HashTable
 from CSVReader import CSVReader
 from Packages import Package, read_packages
+from PrintColor import print_red, print_yellow, print_blue, print_green
 
 def main():
     new_table = HashTable(40)
@@ -45,8 +46,14 @@ def test_packages():
         package = Package(row)
         print(package)
 
+def test_colors():
+    print_red("This text is red")
+    print_yellow("This text is yellow")
+    print_blue("This text is blue")
+    print_green("This text is green")
 if __name__ == "__main__":
     # main()
     print("*************************")
     # test_csv_reader()
-    test_packages()
+    # test_packages()
+    test_colors()
