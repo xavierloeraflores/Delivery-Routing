@@ -57,9 +57,6 @@ class Package:
     
     def is_delayed(self):
         return self.notes == "Delayed on flight---will not arrive to depot until 9:05 am"
-    
-    def is_wrong_address(self):
-        return self.notes == "Wrong address listed"
 
     def is_truck_2(self):
         return self.notes == "Can only be on truck 2"
