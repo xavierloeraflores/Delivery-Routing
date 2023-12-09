@@ -16,7 +16,6 @@ class HashTable:
         self.table = []
         for _ in range(cap):   
             self.table.append(None)
-        print()
     # length of the table
     def __len__(self):
         return self.size
