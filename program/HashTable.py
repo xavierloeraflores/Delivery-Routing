@@ -1,11 +1,13 @@
 capacity = 40
 
+# Node class
 class Node:
     def __init__(self, key, value):
         self.key = key
         self.value = value
         self.next = None
 
+# HashTable class
 class HashTable:
     # Constructor w/ initial capacity of 40 packages
     def __init__(self, cap=capacity):
