@@ -1,4 +1,5 @@
 from CSVReader import CSVReader
+from datetime import time
 
 # Read the package list from the CSV file
 def read_packages():
@@ -59,6 +60,15 @@ class Package:
     # Get the package notes
     def get_notes(self):
         return self.notes
+
+    # Get the deadline as a time object
+    def get_deadline_as_time(self):
+        time_str = self.deadline.split(" ")[0]
+        if self.deadline == "EOD":
+            return None
+        hours = int(time_str.split(":")[0])
+        minutes = int(time_str.split(":")[1])
+        return time(hours, minutes)
 
     # Boolean check for deadline
     def has_deadline(self):
