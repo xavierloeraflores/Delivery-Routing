@@ -2,7 +2,7 @@
 # Name:         Xavier Alejandro Loera Flores
 # Date:         12/08/2023
 
-from PrintColor import print_red, print_yellow, print_blue, print_green
+from Utils import print_red, print_yellow, print_blue, print_green
 from HashTable import HashTable
 from Package import Package, read_packages, raw_packages_to_packages
 from Truck import Truck
@@ -19,6 +19,7 @@ def get_completed_delivery_times_and_truck_mileages(program_objects):
     _distances = program_objects[5]
 
 def get_all_packages_status_at_time(time):
+
     print("This function will print the status of all packages at a given time")
 
 def get_package_status_at_time(package_id, time):

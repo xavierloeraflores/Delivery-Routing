@@ -1,7 +1,7 @@
 from HashTable import HashTable
 from CSVReader import CSVReader
 from Package import Package, read_packages
-from PrintColor import print_red, print_yellow, print_blue, print_green
+from Utils import print_red, print_yellow, print_blue, print_green
 
 def main():
     new_table = HashTable(40)
