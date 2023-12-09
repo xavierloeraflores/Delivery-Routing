@@ -23,8 +23,8 @@ def convert_time_str_to_time(time_str):
     return time(hours, minutes)
 
 # converts a time string to a time object with am or pm
-def convert_time_str_to_time_extended(self):
-    time_str = self.deadline.split(" ")[0]
+def convert_time_str_to_time_extended(extended_time_str):
+    time_str = extended_time_str.split(" ")[0]
     return convert_time_str_to_time(time_str)
 
 # Prints to the terminal in red
