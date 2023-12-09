@@ -3,6 +3,7 @@ from enum import Enum
 from datetime import time
 from Address import Address, get_address_by_street
 from Truck import Truck
+from Utils import convert_time_str_to_time_extended
 
 
 # Status Enum that represents the status of the package
@@ -24,7 +25,9 @@ class DeliveryPackage:
         self.package = package
         self.status = Status.hub
         self.delivery_time = None
-        self.deadline = package.get_deadline_as_time()
+        self.deadline = None
+        if package.get_deadline() != "EOD":
+            self.deadline = convert_time_str_to_time_extended(package.get_deadline())
         self.address = get_address_by_street(package.get_address())
     
     # get the status of the package
