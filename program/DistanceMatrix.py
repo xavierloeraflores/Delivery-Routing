@@ -1,5 +1,6 @@
 from CSVReader import CSVReader
 
+# Read the distance table from the CSV file
 def read_distances():
     reader = CSVReader("DistanceTable.csv")
     rows = reader.read()
@@ -15,12 +16,13 @@ def read_distances():
         distances.append(new_row)
     return distances
 
+# Get the distance between two addresses
 def get_distance_between_addresses(address1_id, address2_id, distances):
     if (address2_id> address1_id):
         return distances[address2_id][address1_id]
     return distances[address1_id][address2_id]
 
-
+# Get the closest address to the start address
 def get_closest_address(start_address_id, address_ids, distances):
     shortest_distance = 100000000.0
     shortest_address_id = 0
