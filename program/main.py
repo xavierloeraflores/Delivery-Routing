@@ -10,6 +10,7 @@ def get_all_packages_status_at_time(time):
 def get_package_status_at_time(package_id, time):
     print("This function will print the status of a given package at a given time")
 
+# Main interface loop that will run until the user chooses to exit
 def interface_loop():
     print("=====================================================")
     print("Please choose an option. Enter number and press enter.")
@@ -31,6 +32,7 @@ def interface_loop():
         print_red("Invalid input")
     return False
 
+# Main program
 class Main:
     print_green("Package Delivery Routing Program")
     
