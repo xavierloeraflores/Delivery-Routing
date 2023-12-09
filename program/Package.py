@@ -1,4 +1,4 @@
-from CSVReader import CSVReader
+from Utils import CSVReader
 from datetime import time
 
 # Read the package list from the CSV file

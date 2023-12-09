@@ -1,4 +1,4 @@
-from CSVReader import CSVReader
+from Utils import CSVReader
 
 # Read the distance table from the CSV file
 def read_distances():

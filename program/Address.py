@@ -1,4 +1,4 @@
-from CSVReader import CSVReader
+from Utils import CSVReader
 
 # Read the address list from the CSV file
 def read_addresses():

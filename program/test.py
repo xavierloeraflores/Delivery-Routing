@@ -1,5 +1,5 @@
 from HashTable import HashTable
-from CSVReader import CSVReader
+from Utils import CSVReader
 from Package import Package, read_packages
 from Utils import print_red, print_yellow, print_blue, print_green
 
