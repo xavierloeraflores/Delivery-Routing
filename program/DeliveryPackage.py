@@ -35,6 +35,9 @@ class DeliveryPackage:
     def get_package(self):
         return self.package 
     
+    def get_id(self):
+        return self.package.get_id()
+    
     # get the delivery time of the package
     def get_delivery_time(self):
         return self.delivery_time

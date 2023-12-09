@@ -20,7 +20,7 @@ def raw_packages_to_packages(raw_packages):
 # Package class for the package objects raw data
 class Package:
     def __init__(self, row):
-        self.id = row[0]
+        self.id = int(row[0])
         self.address = row[1]
         self.city = row[2]
         self.state = row[3]
