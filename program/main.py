@@ -7,6 +7,7 @@ from HashTable import HashTable
 from Package import Package, read_packages, raw_packages_to_packages
 from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
+from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
 
 def get_all_packages_status_at_time(time):
     print("This function will print the status of all packages at a given time")
@@ -47,7 +48,8 @@ def create_program_objects():
     truck1 = Truck(1)
     truck2 = Truck(2)
     truck3 = Truck(3)
-    return [hash_table, packages, truck1, truck2, truck3]
+    distances = read_distances()
+    return [hash_table, packages, truck1, truck2, truck3, distances]
 
 def print_program_objects(program_objects):
     _hash_table = program_objects[0]
@@ -55,6 +57,7 @@ def print_program_objects(program_objects):
     _truck1 = program_objects[2]
     _truck2 = program_objects[3]
     _truck3 = program_objects[4]
+    _distances = program_objects[5]
     print("Printing program objects")
     print_red("Hash Table:")
     print_red(_hash_table)
@@ -64,6 +67,9 @@ def print_program_objects(program_objects):
     print_blue(_truck1)
     print_green(_truck2)
     print_green(_truck3)
+    print_red("distances:")
+    print_red(_distances)
+
     print("End of program objects")
 
 
