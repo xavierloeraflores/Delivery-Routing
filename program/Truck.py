@@ -1,5 +1,6 @@
 from datetime import time
 
+#Truck class
 class Truck:
     id : type(int)
     capacity : type(int)
@@ -10,9 +11,12 @@ class Truck:
     address_id : type(int)
     depart_time : type(time)
 
-    def __init__(self, id, capacity=16, speed=18, address_id=0, depart_time=time(8, 0), packages=None, mileage=0, load=0  ):
+    # __init__ Constructor
+    def __init__(self, id, capacity=16, speed=18, address_id=0, depart_time=time(8, 0), packages=None, mileage=0, load=None  ):
         if packages is None:
             packages = []
+        if load is None:
+            load = len(packages)
         self.id = id
         self.capacity = capacity
         self.speed = speed
@@ -22,9 +26,11 @@ class Truck:
         self.address = address_id
         self.depart_time = depart_time
         self.packages = packages
-    
+
+    # string representation of the truck
     def __str__(self): 
         return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles"
 
+    # set the current address of the truck
     def set_address_id(self, address_id):
         self.address_id = address_id
