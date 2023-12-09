@@ -19,3 +19,15 @@ def get_distance_between_addresses(address1_id, address2_id, distances):
     if (address2_id> address1_id):
         return distances[address2_id][address1_id]
     return distances[address1_id][address2_id]
+
+
+def get_closest_address(start_address_id, address_ids, distances):
+    shortest_distance = 100000000.0
+    shortest_address_id = 0
+    for cur_address_id in address_ids:
+        if cur_address_id != start_address_id:
+            cur_distance = get_distance_between_addresses(start_address_id, cur_address_id, distances)
+            if cur_distance < shortest_distance:
+                shortest_distance = cur_distance
+                shortest_address_id = cur_address_id
+    return shortest_address_id
