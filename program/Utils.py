@@ -44,3 +44,11 @@ def print_blue(text):
 # Prints to the terminal in yellow
 def print_yellow(text):
     print("\033[93m {}\033[00m" .format(text))
+
+# get the total distance traveled
+def get_distance_traveled(speed, time):
+    return speed * time
+
+# get the time traveled
+def get_time_traveled(distance, speed):
+    return distance / speed
