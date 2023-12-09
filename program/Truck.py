@@ -31,6 +31,11 @@ class Truck:
     def __str__(self): 
         return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles"
 
+    # Getters for the truck attributes
+    def get_depart_time(self):
+        return self.depart_time
+
+
     # set the current address of the truck
     def set_address_id(self, address_id):
         self.address_id = address_id

@@ -69,7 +69,7 @@ class Package:
         hours = int(time_str.split(":")[0])
         minutes = int(time_str.split(":")[1])
         return time(hours, minutes)
-
+    
     # Boolean check for deadline
     def has_deadline(self):
         return self.deadline != "EOD"
