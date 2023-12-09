@@ -9,6 +9,15 @@ from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
 
+def get_completed_delivery_times_and_truck_mileages(program_objects):
+    print("This function will print the completed delivery times and truck mileages")
+    _hash_table = program_objects[0]
+    _packages = program_objects[1]
+    _truck1 = program_objects[2]
+    _truck2 = program_objects[3]
+    _truck3 = program_objects[4]
+    _distances = program_objects[5]
+
 def get_all_packages_status_at_time(time):
     print("This function will print the status of all packages at a given time")
 
@@ -16,7 +25,7 @@ def get_package_status_at_time(package_id, time):
     print("This function will print the status of a given package at a given time")
 
 # Main interface loop that will run until the user chooses to exit
-def interface_loop():
+def interface_loop(program_objects):
     print("=====================================================")
     print("Please choose an option. Enter number and press enter.")
     print("0. Exit")
@@ -28,7 +37,7 @@ def interface_loop():
         if choice not in range(0, 4) or choice == 0:
             return True
         elif choice == 1:
-            print("Option 1")
+            get_completed_delivery_times_and_truck_mileages(program_objects)
         elif choice == 2:
             print("Option 2")
         elif choice == 3:
@@ -81,6 +90,6 @@ class Main:
     
     finish_program = False
     while not finish_program:
-        finish_program = interface_loop()
+        finish_program = interface_loop(program_objects)
     
     print_red("Closing Program")
