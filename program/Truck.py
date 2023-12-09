@@ -22,8 +22,9 @@ class Truck:
         self.address = address_id
         self.depart_time = depart_time
         self.packages = packages
+    
+    def __str__(self): 
+        return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles"
 
     def set_address_id(self, address_id):
         self.address_id = address_id
-    
-            
