@@ -11,6 +11,12 @@ def read_packages():
             packages.append(row)
     return packages
 
+def raw_packages_to_packages(raw_packages):
+    packages = []
+    for package in raw_packages:
+        new_package = Package(package)
+        packages.append(new_package)
+    return packages
 # Package class for the package objects raw data
 class Package:
     def __init__(self, row):
