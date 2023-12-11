@@ -1,7 +1,7 @@
 from datetime import time, timedelta
 from DeliveryPackage import DeliveryPackage, Status
 from Utils import get_distance_traveled, get_time_traveled
-from DistanceMatrix import get_distance_between_addresses, get_closest_address, get_address_by_street
+from DistanceMatrix import get_distance_between_addresses, get_closest_address
 
 #Truck class
 class Truck:
