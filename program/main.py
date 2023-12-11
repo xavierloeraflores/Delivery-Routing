@@ -2,7 +2,7 @@
 # Name:         Xavier Alejandro Loera Flores
 # Date:         12/08/2023
 
-from Utils import print_red, print_yellow, print_blue, print_green
+from Utils import print_red, print_yellow, print_blue, print_green, convert_time_str_to_time
 from HashTable import HashTable
 from Package import Package, read_packages, raw_packages_to_packages
 from Truck import Truck
@@ -18,9 +18,17 @@ def get_completed_delivery_times_and_truck_mileages(program_objects):
     _truck3 = program_objects[4]
     _distances = program_objects[5]
 
-def get_all_packages_status_at_time(time):
+def get_all_packages_status_at_time(time_str, program_objects):
+    _time = convert_time_str_to_time(time_str)
+    _hash_table = program_objects[0]
+    _packages = program_objects[1]
+    _truck1 = program_objects[2]
+    _truck2 = program_objects[3]
+    _truck3 = program_objects[4]
+    _distances = program_objects[5]
 
     print("This function will print the status of all packages at a given time")
+    print("Time:", _time)
 
 def get_package_status_at_time(package_id, time):
     print("This function will print the status of a given package at a given time")
@@ -40,7 +48,8 @@ def interface_loop(program_objects):
         elif choice == 1:
             get_completed_delivery_times_and_truck_mileages(program_objects)
         elif choice == 2:
-            print("Option 2")
+            time_str = input("Please enter a time in the format HH:MM \n")
+            get_all_packages_status_at_time(time_str, program_objects)
         elif choice == 3:
             print("Option 3")
     except ValueError:
