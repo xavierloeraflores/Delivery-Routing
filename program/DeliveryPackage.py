@@ -18,6 +18,7 @@ class DeliveryPackage:
     delivery_time = time
     deadline = time
     address_id = Address
+    truck_id = int
 
     # __init__ Constructor
     def __init__(self,  package ):
@@ -25,6 +26,7 @@ class DeliveryPackage:
         self.status = Status.hub
         self.delivery_time = None
         self.deadline = None
+        self.truck_id = None
         if package.get_deadline() != "EOD":
             self.deadline = convert_time_str_to_time_extended(package.get_deadline())
         self.address = get_address_by_street(package.get_address())
@@ -69,3 +71,7 @@ class DeliveryPackage:
     # Sets the delivery time of the package
     def set_delivery_time(self, time, truck):
         self.delivery_time = time
+
+    # Sets the truck id of the package
+    def set_truck_id(self, truck_id):
+        self.truck_id = truck_id
