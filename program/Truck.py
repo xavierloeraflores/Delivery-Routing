@@ -32,7 +32,7 @@ class Truck:
         self.time = depart_time
 
     # load a package into the truck
-    def load_packages(self, idx, hash_table):
+    def load_package(self, idx, hash_table):
         self.packages.append(idx)
         load += 1
         package = hash_table.get(idx)
