@@ -9,6 +9,15 @@ from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
 
+def load_trucks(program_objects):
+    _hash_table = program_objects[0]
+    _packages = program_objects[1]
+    _truck1 = program_objects[2]
+    _truck2 = program_objects[3]
+    _truck3 = program_objects[4]
+    _distances = program_objects[5]
+    print("This function will load the trucks with packages")
+
 def get_completed_delivery_times_and_truck_mileages(program_objects):
     print("This function will print the completed delivery times and truck mileages")
     _hash_table = program_objects[0]
