@@ -31,6 +31,13 @@ class Truck:
         self.packages = packages
         self.time = depart_time
 
+    def load_packages(self, idx, hash_table):
+        self.packages.append(idx)
+        load += 1
+        package = hash_table.get(idx)
+        # set package status & truck id
+        hash_table.update(idx, package)
+
     # string representation of the truck
     def __str__(self): 
         return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles"
