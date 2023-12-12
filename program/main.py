@@ -9,33 +9,6 @@ from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
 
-def load_trucks(program_objects):
-    _hash_table = program_objects[0]
-    _packages = program_objects[1]
-    _truck1 = program_objects[2]
-    _truck2 = program_objects[3]
-    _truck3 = program_objects[4]
-    _distances = program_objects[5]
-    t1_packages = [] #Priority Packages
-    t2_packages = [] #Slow Packages
-    t3_packages = [] #Delayed Packages
-    print("This function will load the trucks with packages")
-    for package in _packages:
-        cur_idx = package.get_id()
-        if package.is_delayed():
-            t3_packages.append(cur_idx)
-        elif package.has_deadline():
-            t1_packages.append(cur_idx)
-        elif package.is_truck_2():
-            t2_packages.append(cur_idx)
-        else:
-            if len(t2_packages)<len(t3_packages):
-                t2_packages.append(cur_idx)
-            else:
-                t3_packages.append(cur_idx)
-    print("Truck 1 Packages:",len(t1_packages), t1_packages)
-    print("Truck 2 Packages:",len(t2_packages), t2_packages)
-    print("Truck 3 Packages:",len(t3_packages), t3_packages)
 
 def get_completed_delivery_times_and_truck_mileages(program_objects):
     print("This function will print the completed delivery times and truck mileages")
@@ -136,7 +109,6 @@ class Main:
     program_objects = create_program_objects()
     print_program_objects(program_objects)
     print_green("Package Delivery Routing Program")
-    load_trucks(program_objects)
     finish_program = False
     while not finish_program:
         finish_program = interface_loop(program_objects)
