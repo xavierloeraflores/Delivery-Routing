@@ -13,9 +13,11 @@ class Truck:
     mileage : type(int)
     address_id : type(int)
     depart_time : type(time)
+    time : type(time)
+    has_priority_packages : type(bool)
 
     # __init__ Constructor
-    def __init__(self, id, capacity=16, speed=18, address_id=0, depart_time=time(8, 0), packages=None, mileage=0, load=None  ):
+    def __init__(self, id, capacity=16, speed=18, address_id=0, depart_time=time(8, 0), packages=None, mileage=0, load=None, has_priority_packages=True  ):
         if packages is None:
             packages = []
         if load is None:
@@ -30,6 +32,7 @@ class Truck:
         self.depart_time = depart_time
         self.packages = packages
         self.time = depart_time
+        self.has_priority_packages = True
 
     # load a package into the truck
     def load_package(self, idx, hash_table):
@@ -85,3 +88,15 @@ class Truck:
     # set the current address of the truck
     def set_address_id(self, address_id):
         self.address_id = address_id
+    
+    # check, update, and return the priority packages
+    def get_priority_packages(self, hash_table):
+        priority_packages = []
+        if(self.has_priority_packages == False):
+            return priority_packages
+        for package_id in self.packages:
+            if hash_table.get(package_id).get_status() == Status.enroute:
+                priority_packages.append(package_id)
+        if (len(priority_packages) == 0):
+            self.has_priority_packages = False
+        return priority_packages
