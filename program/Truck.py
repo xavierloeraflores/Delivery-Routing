@@ -31,11 +31,12 @@ class Truck:
         self.packages = packages
         self.time = depart_time
 
+    # load a package into the truck
     def load_packages(self, idx, hash_table):
         self.packages.append(idx)
         load += 1
         package = hash_table.get(idx)
-        # set package status & truck id
+        package.set_truck_id(self.id)
         hash_table.update(idx, package)
 
     # string representation of the truck
