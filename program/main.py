@@ -10,23 +10,23 @@ from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
 
 
-def get_completed_delivery_times_and_truck_mileages(program_objects):
+def get_completed_delivery_times_and_truck_mileages(system):
     print("This function will print the completed delivery times and truck mileages")
-    _hash_table = program_objects[0]
-    _packages = program_objects[1]
-    _truck1 = program_objects[2]
-    _truck2 = program_objects[3]
-    _truck3 = program_objects[4]
-    _distances = program_objects[5]
+    _hash_table = system[0]
+    _packages = system[1]
+    _truck1 = system[2]
+    _truck2 = system[3]
+    _truck3 = system[4]
+    _distances = system[5]
 
-def get_all_packages_status_at_time(time_str, program_objects):
+def get_all_packages_status_at_time(time_str, system):
     _time = convert_time_str_to_time(time_str)
-    _hash_table = program_objects[0]
-    _packages = program_objects[1]
-    _truck1 = program_objects[2]
-    _truck2 = program_objects[3]
-    _truck3 = program_objects[4]
-    _distances = program_objects[5]
+    _hash_table = system[0]
+    _packages = system[1]
+    _truck1 = system[2]
+    _truck2 = system[3]
+    _truck3 = system[4]
+    _distances = system[5]
 
     print("This function will print the status of all packages at a given time")
     print("Time:", _time)
@@ -35,7 +35,7 @@ def get_package_status_at_time(package_id, time):
     print("This function will print the status of a given package at a given time")
 
 # Main interface loop that will run until the user chooses to exit
-def interface_loop(program_objects):
+def interface_loop(system):
     print("=====================================================")
     print("Please choose an option. Enter number and press enter.")
     print("0. Exit")
@@ -47,17 +47,17 @@ def interface_loop(program_objects):
         if choice not in range(0, 4) or choice == 0:
             return True
         elif choice == 1:
-            get_completed_delivery_times_and_truck_mileages(program_objects)
+            get_completed_delivery_times_and_truck_mileages(system)
         elif choice == 2:
             time_str = input("Please enter a time in the format HH:MM \n")
-            get_all_packages_status_at_time(time_str, program_objects)
+            get_all_packages_status_at_time(time_str, system)
         elif choice == 3:
             print("Option 3")
     except ValueError:
         print_red("Invalid input")
     return False
 
-def create_program_objects():
+def create_system():
     hash_table = HashTable(40)
     truck1 = Truck(1)
     truck2 = Truck(2)
@@ -82,13 +82,13 @@ def create_program_objects():
     distances = read_distances()
     return [hash_table, packages, truck1, truck2, truck3, distances]
 
-def print_program_objects(program_objects):
-    _hash_table = program_objects[0]
-    _packages = program_objects[1]
-    _truck1 = program_objects[2]
-    _truck2 = program_objects[3]
-    _truck3 = program_objects[4]
-    _distances = program_objects[5]
+def print_system(system):
+    _hash_table = system[0]
+    _packages = system[1]
+    _truck1 = system[2]
+    _truck2 = system[3]
+    _truck3 = system[4]
+    _distances = system[5]
     print("Printing program objects")
     print_red("Hash Table:")
     print_red(_hash_table)
@@ -106,11 +106,11 @@ def print_program_objects(program_objects):
 
 # Main program
 class Main:
-    program_objects = create_program_objects()
-    print_program_objects(program_objects)
+    system = create_system()
+    print_system(system)
     print_green("Package Delivery Routing Program")
     finish_program = False
     while not finish_program:
-        finish_program = interface_loop(program_objects)
+        finish_program = interface_loop(system)
     
     print_red("Closing Program")
