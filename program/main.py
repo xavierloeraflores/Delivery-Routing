@@ -86,19 +86,15 @@ def interface_loop(program_objects):
 
 def create_program_objects():
     hash_table = HashTable(40)
+    truck1 = Truck(1)
+    truck2 = Truck(2)
+    truck3 = Truck(3)
     raw_packages = read_packages()
     packages = raw_packages_to_packages(raw_packages)
     for package in packages:
         delivery_package = DeliveryPackage(package)
-        hash_table.insert(delivery_package.get_id(), delivery_package)
-        t = hash_table.get(delivery_package.get_id())
-    truck1 = Truck(1)
-    truck2 = Truck(2)
-    truck3 = Truck(3)
-    distances = read_distances()
-
-    for package in packages:
-        cur_idx = package.get_id()
+        cur_idx = delivery_package.get_id()
+        hash_table.insert(cur_idx, delivery_package)
         if package.is_delayed():
             truck3.load_package(cur_idx, hash_table)
         elif package.has_deadline():
@@ -110,10 +106,7 @@ def create_program_objects():
                 truck2.load_package(cur_idx, hash_table)
             else:
                 truck3.load_package(cur_idx, hash_table)
-    print("Truck 1 Packages:",truck1.load, truck1.packages)
-    print("Truck 2 Packages:",truck2.load, truck2.packages)
-    print("Truck 3 Packages:",truck3.load, truck3.packages)
-    
+    distances = read_distances()
     return [hash_table, packages, truck1, truck2, truck3, distances]
 
 def print_program_objects(program_objects):
