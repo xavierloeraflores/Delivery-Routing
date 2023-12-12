@@ -96,6 +96,24 @@ def create_program_objects():
     truck2 = Truck(2)
     truck3 = Truck(3)
     distances = read_distances()
+
+    for package in packages:
+        cur_idx = package.get_id()
+        if package.is_delayed():
+            truck3.load_package(cur_idx, hash_table)
+        elif package.has_deadline():
+            truck1.load_package(cur_idx, hash_table)
+        elif package.is_truck_2():
+            truck2.load_package(cur_idx, hash_table)
+        else:
+            if truck2.load<truck3.load:
+                truck2.load_package(cur_idx, hash_table)
+            else:
+                truck3.load_package(cur_idx, hash_table)
+    print("Truck 1 Packages:",truck1.load, truck1.packages)
+    print("Truck 2 Packages:",truck2.load, truck2.packages)
+    print("Truck 3 Packages:",truck3.load, truck3.packages)
+    
     return [hash_table, packages, truck1, truck2, truck3, distances]
 
 def print_program_objects(program_objects):
