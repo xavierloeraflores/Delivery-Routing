@@ -63,6 +63,12 @@ class Truck:
                 undelivered_packages.append(package_id)
         return undelivered_packages
     
+    def get_undelivered_packages_addresses(self, undelivered_packages, hash_table):
+        addresses = []
+        for package_id in undelivered_packages:
+            addresses.append(hash_table.get(package_id).address_id)
+        return addresses
+    
     # deliver a single package
     def deliver_package(self, package_id, distances, hash_table):
         package = hash_table.get(package_id)
