@@ -1,7 +1,7 @@
 from datetime import time, timedelta
 from DeliveryPackage import DeliveryPackage, Status
 from Utils import get_distance_traveled, get_time_traveled
-from DistanceMatrix import get_distance_between_addresses, get_closest_address
+from DistanceMatrix import DistanceMatrix
 
 #Truck class
 class Truck:
@@ -70,9 +70,9 @@ class Truck:
         return addresses
     
     # deliver a single package
-    def deliver_package(self, package_id, distances, hash_table):
+    def deliver_package(self, package_id, hash_table):
         package = hash_table.get(package_id)
-        distance = get_distance_between_addresses(self.address_id, package.address_id, distances) 
+        distance = DistanceMatrix.get_distance_between_addresses(self.address_id, package.address_id) 
         package.set_status_to_delivered()
         self.address_id = package.address_id
         hash_table.update(package_id, package)
