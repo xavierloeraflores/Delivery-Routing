@@ -69,7 +69,7 @@ class DeliveryPackage:
         self.status = Status.enroute
 
     # Sets the delivery time of the package
-    def set_delivery_time(self, time, truck):
+    def set_delivery_time(self, time):
         self.delivery_time = time
 
     # Sets the truck id of the package
