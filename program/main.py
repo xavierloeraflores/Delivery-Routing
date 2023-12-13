@@ -9,6 +9,16 @@ from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
 
+def identify_next_package(truck, hash_table, distances):
+    print("This function will return the next package to be delivered")
+    undelivered_packages = truck.get_undelivered_packages(hash_table)
+    current_address_id = truck.get_address_id()
+    undelivered_packages_addresses = []
+    closest_address_id = get_closest_address(current_address_id, undelivered_packages_addresses, distances)
+    for package_id in undelivered_packages:
+        package = hash_table.get(package_id)
+        if package.address_id == closest_address_id:
+            return package_id
 
 def get_completed_delivery_times_and_truck_mileages(system):
     print("This function will print the completed delivery times and truck mileages")
