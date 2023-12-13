@@ -7,14 +7,14 @@ from HashTable import HashTable
 from Package import Package, read_packages, raw_packages_to_packages
 from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
-from DistanceMatrix import read_distances, get_distance_between_addresses, get_closest_address
+from DistanceMatrix import DistanceMatrix
 
-def identify_next_package(truck, hash_table, distances):
+def identify_next_package(truck, hash_table):
     print("This function will return the next package to be delivered")
     undelivered_packages = truck.get_undelivered_packages(hash_table)
     current_address_id = truck.get_address_id()
     undelivered_packages_addresses = []
-    closest_address_id = get_closest_address(current_address_id, undelivered_packages_addresses, distances)
+    closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
     for package_id in undelivered_packages:
         package = hash_table.get(package_id)
         if package.address_id == closest_address_id:
@@ -27,7 +27,6 @@ def get_completed_delivery_times_and_truck_mileages(system):
     _truck1 = system[2]
     _truck2 = system[3]
     _truck3 = system[4]
-    _distances = system[5]
 
 def get_all_packages_status_at_time(time_str, system):
     _time = convert_time_str_to_time(time_str)
@@ -36,7 +35,6 @@ def get_all_packages_status_at_time(time_str, system):
     _truck1 = system[2]
     _truck2 = system[3]
     _truck3 = system[4]
-    _distances = system[5]
 
     print("This function will print the status of all packages at a given time")
     print("Time:", _time)
@@ -89,8 +87,7 @@ def create_system():
                 truck2.load_package(cur_idx, hash_table)
             else:
                 truck3.load_package(cur_idx, hash_table)
-    distances = read_distances()
-    return [hash_table, packages, truck1, truck2, truck3, distances]
+    return [hash_table, packages, truck1, truck2, truck3]
 
 def print_system(system):
     _hash_table = system[0]
@@ -98,7 +95,6 @@ def print_system(system):
     _truck1 = system[2]
     _truck2 = system[3]
     _truck3 = system[4]
-    _distances = system[5]
     print("Printing program objects")
     print_red("Hash Table:")
     print_red(_hash_table)
@@ -108,8 +104,6 @@ def print_system(system):
     print_blue(_truck1)
     print_green(_truck2)
     print_green(_truck3)
-    print_red("distances:")
-    print_red(_distances)
 
     print("End of program objects")
 
