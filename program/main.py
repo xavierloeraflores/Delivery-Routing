@@ -38,16 +38,9 @@ def loadPackages():
 
 def deliveryAlgorithm(truck, time=None):
     next_package_id = identify_next_package(truck)
-    # print_red(truck.packages)
     while((time == None or time >truck.time) and next_package_id != None):
-        # print_red('%%%%%')
         truck.deliver_package(next_package_id, System.hash_table)
         next_package_id = identify_next_package(truck)
-        # print_red('%%%%%')
-        # print_yellow("Next package id: " + str(next_package_id))
-        # print(str(truck.time))
-        # print(next_package_id)
-        # print(truck.address_id)
     print_green('--------- Truck Finished ---------')
 
 def identify_next_package(truck):
