@@ -9,6 +9,7 @@ from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import DistanceMatrix
 from System import System
+from Address import Address, AddressBook
 
 def deliveryRoutingSystem(time=None):
     print("This function will return a list of trucks and their packages")
@@ -36,22 +37,43 @@ def loadPackages():
 
 
 def deliveryAlgorithm(truck, time=None):
-    next_package_id = -1
-    print_red(truck.packages)
+    next_package_id = identify_next_package(truck)
+    # print_red(truck.packages)
     while((time == None or time >truck.time) and next_package_id != None):
+        # print_red('%%%%%')
+        truck.deliver_package(next_package_id, System.hash_table)
         next_package_id = identify_next_package(truck)
-        print_yellow("Next package id: " + str(next_package_id))
+        # print_red('%%%%%')
+        # print_yellow("Next package id: " + str(next_package_id))
+        # print(str(truck.time))
+        # print(next_package_id)
+        # print(truck.address_id)
+    print_green('--------- Truck Finished ---------')
 
 def identify_next_package(truck):
-    print("This function will return the next package to be delivered")
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
-    print_yellow("Undelivered packages: " + str(undelivered_packages))
-    current_address_id = truck.address_id
+    # print_yellow("Undelivered packages: " + str(undelivered_packages))
+    current_address_id = int(truck.address_id)
+    # print_yellow("Current address id: " + str(current_address_id))
     undelivered_packages_addresses = []
-    closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
     for package_id in undelivered_packages:
         package = System.hash_table.get(package_id)
-        if package.address_id == closest_address_id:
+        # print_yellow("----Package Address: " + str(package.address))
+        # print_yellow("Raw Address: " + str(package.package))
+        address_id = int(package.address.id)
+        undelivered_packages_addresses.append(address_id)
+    # print_yellow("Undelivered packages addresses: " + str(undelivered_packages_addresses))
+    # print_blue(undelivered_packages_addresses)
+    closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
+    # print_blue(undelivered_packages_addresses)
+    # print_blue('***********')
+    for package_id in undelivered_packages:
+        # print_green("Package id: " + str(package_id))
+        package_address_id = int(System.hash_table.get(package_id).address.id)
+        # print_blue("Package address id: " + str(package.get_id() ))
+        print(closest_address_id, package_address_id)
+        if package_address_id == closest_address_id:
+            # print_green(True)
             return package_id
     return None
 
@@ -146,7 +168,7 @@ def print_system(system):
 # Main program
 class Main:
     system = create_system()
-    print_system(system)
+    # print_system(system)
     print_green("Package Delivery Routing Program")
     finish_program = False
     System.create_system()

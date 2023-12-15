@@ -28,6 +28,9 @@ class Package:
         self.deadline = row[5]
         self.weight = row[6]
         self.notes = row[7]
+        if self.id == 26:
+            print(row)
+            print(self.address)
     
     # string representation of the package
     def __str__(self):

@@ -1,4 +1,4 @@
-from datetime import time, timedelta
+from datetime import datetime, timedelta
 from DeliveryPackage import DeliveryPackage, Status
 from Utils import get_distance_traveled, get_time_traveled
 from DistanceMatrix import DistanceMatrix
@@ -12,12 +12,12 @@ class Truck:
     packages : type(list)
     mileage : type(int)
     address_id : type(int)
-    depart_time : type(time)
-    time : type(time)
+    depart_time : type(datetime)
+    time : type(datetime)
     has_priority_packages : type(bool)
 
     # __init__ Constructor
-    def __init__(self, id, capacity=16, speed=18, address_id=0, depart_time=time(8, 0), packages=None, mileage=0, load=None, has_priority_packages=True  ):
+    def __init__(self, id,depart_time=None, capacity=16, speed=18, address_id=0,  packages=None, mileage=0, load=None, has_priority_packages=True  ):
         if packages is None:
             packages = []
         if load is None:
@@ -29,6 +29,8 @@ class Truck:
         self.packages = packages
         self.mileage = mileage
         self.address_id = address_id
+        if depart_time is None:
+            depart_time = datetime(year=2000, month=1, day=1,hour=8,minute=0,second=0)
         self.depart_time = depart_time
         self.packages = packages
         self.time = depart_time
@@ -76,14 +78,15 @@ class Truck:
     # deliver a single package
     def deliver_package(self, package_id, hash_table):
         package = hash_table.get(package_id)
-        distance = DistanceMatrix.get_distance_between_addresses(self.address_id, package.address_id) 
+        distance = DistanceMatrix.get_distance_between_addresses(self.address_id, package.address.id) 
         package.set_status_to_delivered()
-        self.address_id = package.address_id
+        self.address_id = package.address.id
         hash_table.update(package_id, package)
         self.load -= 1
         self.mileage += distance
         minutes_traveled = get_time_traveled(distance, self.speed)
-        self.time = self.time+timedelta(minutes=minutes_traveled)
+        time_delta = timedelta(minutes=minutes_traveled)
+        self.time = self.time+time_delta
 
 
     # travel for a given time

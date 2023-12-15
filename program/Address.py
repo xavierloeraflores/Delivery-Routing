@@ -1,4 +1,4 @@
-from Utils import CSVReader
+from Utils import CSVReader,print_red,print_green
 
 # Read the address list from the CSV file
 def read_addresses():
@@ -45,4 +45,9 @@ class AddressBook:
         for address in AddressBook.address_list:
             if address.street == street:
                 return address
+        print_red(street)
+        for address in AddressBook.address_list:
+            print_green(address.street)
+            # if address.street == street:
+                # return address
         return None
