@@ -32,9 +32,8 @@ class DistanceMatrix:
         shortest_distance = 100000000.0
         shortest_address_id = 0
         for cur_address_id in address_ids:
-            if cur_address_id != start_address_id:
-                cur_distance = DistanceMatrix.get_distance_between_addresses(start_address_id, cur_address_id)
-                if cur_distance < shortest_distance:
-                    shortest_distance = cur_distance
-                    shortest_address_id = cur_address_id
+            cur_distance = DistanceMatrix.get_distance_between_addresses(start_address_id, cur_address_id)
+            if cur_distance < shortest_distance:
+                shortest_distance = cur_distance
+                shortest_address_id = cur_address_id
         return shortest_address_id

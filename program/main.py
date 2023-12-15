@@ -14,7 +14,11 @@ from Address import Address, AddressBook
 def deliveryRoutingSystem(time=None):
     print("This function will return a list of trucks and their packages")
     loadPackages()
+    print(System.truck1.packages)
+    print(System.hash_table.get(34).status)
     deliveryAlgorithm(System.truck1, time)
+    print(System.hash_table.get(34).status)
+    print(System.truck1.packages)
     deliveryAlgorithm(System.truck2, time)
     deliveryAlgorithm(System.truck3, time)
     System.printSystem()
@@ -44,8 +48,15 @@ def deliveryAlgorithm(truck, time=None):
         next_package_id = identify_next_package(truck)
     print_green('--------- Truck Finished ---------')
 
+def print34(idx, str):
+    if(idx == 34):
+        print_red(str)
+def print22(idx, str):
+    if(idx == 22):
+        print_red(str)
 def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
+    print(undelivered_packages)
     # print_yellow("Undelivered packages: " + str(undelivered_packages))
     current_address_id = int(truck.address_id)
     # print_yellow("Current address id: " + str(current_address_id))
@@ -56,16 +67,18 @@ def identify_next_package(truck):
         # print_yellow("Raw Address: " + str(package.package))
         address_id = int(package.address.id)
         undelivered_packages_addresses.append(address_id)
+        print34(package_id, current_address_id)
     # print_yellow("Undelivered packages addresses: " + str(undelivered_packages_addresses))
     # print_blue(undelivered_packages_addresses)
     closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
+    print22(current_address_id,closest_address_id )
     # print_blue(undelivered_packages_addresses)
     # print_blue('***********')
     for package_id in undelivered_packages:
         # print_green("Package id: " + str(package_id))
         package_address_id = int(System.hash_table.get(package_id).address.id)
         # print_blue("Package address id: " + str(package.get_id() ))
-        print(closest_address_id, package_address_id)
+        # print(closest_address_id, package_address_id)
         if package_address_id == closest_address_id:
             # print_green(True)
             return package_id
