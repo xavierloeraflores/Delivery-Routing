@@ -16,11 +16,11 @@ def delivery_routing_system(time=None):
     load_packages()
     print(System.truck1.packages)
     print(System.hash_table.get(34).status)
-    deliveryAlgorithm(System.truck1, time)
+    delivery_algorithm(System.truck1, time)
     print(System.hash_table.get(34).status)
     print(System.truck1.packages)
-    deliveryAlgorithm(System.truck2, time)
-    deliveryAlgorithm(System.truck3, time)
+    delivery_algorithm(System.truck2, time)
+    delivery_algorithm(System.truck3, time)
     System.printSystem()
 
 def load_packages():
@@ -41,7 +41,7 @@ def load_packages():
                 System.truck3.load_package(cur_idx, System.hash_table)
 
 
-def deliveryAlgorithm(truck, time=None):
+def delivery_algorithm(truck, time=None):
     next_package_id = identify_next_package(truck)
     while((time == None or time >truck.time) and next_package_id != None):
         truck.deliver_package(next_package_id, System.hash_table)
