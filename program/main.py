@@ -140,29 +140,11 @@ def create_system():
                 truck3.load_package(cur_idx, hash_table)
     return [hash_table, packages, truck1, truck2, truck3]
 
-def print_system(system):
-    _hash_table = system[0]
-    _packages = system[1]
-    _truck1 = system[2]
-    _truck2 = system[3]
-    _truck3 = system[4]
-    print("Printing program objects")
-    print_red("Hash Table:")
-    print_red(_hash_table)
-    print_yellow("Packages:")
-    for package in _packages:
-        print_yellow(package)
-    print_blue(_truck1)
-    print_green(_truck2)
-    print_green(_truck3)
-
-    print("End of program objects")
 
 
 # Main program
 class Main:
     system = create_system()
-    # print_system(system)
     print_green("Package Delivery Routing Program")
     finish_program = False
     System.create_system()
