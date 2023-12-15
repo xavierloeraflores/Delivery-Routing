@@ -37,6 +37,7 @@ def load_packages():
 
 
 def delivery_algorithm(truck, time=None):
+    truck.depart(System.hash_table, time)
     next_package_id = identify_next_package(truck)
     while((time == None or time >truck.time) and next_package_id != None):
         truck.deliver_package(next_package_id, System.hash_table)

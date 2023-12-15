@@ -53,12 +53,11 @@ class Truck:
         return self.depart_time
     
     # depart the truck and set the status of the packages to enroute
-    def depart(self, hash_table, time):
-        self.depart_time = time
-        self.load = len(self.packages)
-        for package_id in self.packages:
-            package = hash_table.get(package_id)
-            package.status = Status.enroute
+    def depart(self, hash_table, time=None):
+        if time is None or time > self.depart_time:
+            for package_id in self.packages:
+                package = hash_table.get(package_id)
+                package.status = Status.enroute
 
     # get the list of undelivered packages Ids
     def get_undelivered_packages(self, hash_table):
