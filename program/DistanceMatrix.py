@@ -18,7 +18,7 @@ def read_distances():
 
 # DistanceMatrix class for looking up distances between addresses
 class DistanceMatrix:
-    distances = read_distances
+    distances = read_distances()
     # Get the distance between two addresses
     @staticmethod
     def get_distance_between_addresses(address1_id, address2_id):
