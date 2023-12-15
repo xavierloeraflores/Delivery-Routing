@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime
 import csv
 
 # CSVReader class to read CSV files
@@ -20,7 +20,7 @@ class CSVReader:
 def convert_time_str_to_time(time_str):
     hours = int(time_str.split(":")[0])
     minutes = int(time_str.split(":")[1])
-    return time(hours, minutes)
+    return datetime(year=2000, month=1, day=1, hour=hours, minute=minutes)
 
 # converts a time string to a time object with am or pm
 def convert_time_str_to_time_extended(extended_time_str):
