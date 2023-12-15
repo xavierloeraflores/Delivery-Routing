@@ -29,4 +29,4 @@ class System:
         print(System.truck3)
         for package in PackageList.packages:
             delivery_package = System.hash_table.get(package.get_id())
-            print(str(delivery_package))
+            delivery_package.print()

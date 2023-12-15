@@ -2,7 +2,7 @@ from Package import Package
 from enum import Enum
 from datetime import time
 from Address import Address, AddressBook
-from Utils import convert_time_str_to_time_extended
+from Utils import convert_time_str_to_time_extended, print_green, print_yellow, print_red
 
 
 # Status Enum that represents the status of the package
@@ -30,6 +30,17 @@ class DeliveryPackage:
         if package.get_deadline() != "EOD":
             self.deadline = convert_time_str_to_time_extended(package.get_deadline())
         self.address = AddressBook.get_address_by_street(package.get_address())
+
+    def print(self):
+        package_string = str(self.package)
+        if(self.status == Status.delivered):
+            print_green(package_string)
+        elif(self.status == Status.enroute):
+            print_yellow(package_string)
+        else:
+            print_red(package_string)
+
+
     
     # get the status of the package
     def get_status(self):
