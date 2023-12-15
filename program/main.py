@@ -56,7 +56,6 @@ def print22(idx, str):
         print_red(str)
 def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
-    print(undelivered_packages)
     # print_yellow("Undelivered packages: " + str(undelivered_packages))
     current_address_id = int(truck.address_id)
     # print_yellow("Current address id: " + str(current_address_id))
@@ -67,11 +66,9 @@ def identify_next_package(truck):
         # print_yellow("Raw Address: " + str(package.package))
         address_id = int(package.address.id)
         undelivered_packages_addresses.append(address_id)
-        print34(package_id, current_address_id)
     # print_yellow("Undelivered packages addresses: " + str(undelivered_packages_addresses))
     # print_blue(undelivered_packages_addresses)
     closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
-    print22(current_address_id,closest_address_id )
     # print_blue(undelivered_packages_addresses)
     # print_blue('***********')
     for package_id in undelivered_packages:
