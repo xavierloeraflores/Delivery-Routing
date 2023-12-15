@@ -48,12 +48,6 @@ def deliveryAlgorithm(truck, time=None):
         next_package_id = identify_next_package(truck)
     print_green('--------- Truck Finished ---------')
 
-def print34(idx, str):
-    if(idx == 34):
-        print_red(str)
-def print22(idx, str):
-    if(idx == 22):
-        print_red(str)
 def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
     # print_yellow("Undelivered packages: " + str(undelivered_packages))
@@ -81,27 +75,9 @@ def identify_next_package(truck):
             return package_id
     return None
 
-def get_completed_delivery_times_and_truck_mileages(system):
-    print("This function will print the completed delivery times and truck mileages")
-    _hash_table = system[0]
-    _packages = system[1]
-    _truck1 = system[2]
-    _truck2 = system[3]
-    _truck3 = system[4]
 
-def get_all_packages_status_at_time(time_str, system):
-    _time = convert_time_str_to_time(time_str)
-    _hash_table = system[0]
-    _packages = system[1]
-    _truck1 = system[2]
-    _truck2 = system[3]
-    _truck3 = system[4]
 
-    print("This function will print the status of all packages at a given time")
-    print("Time:", _time)
 
-def get_package_status_at_time(package_id, time):
-    print("This function will print the status of a given package at a given time")
 
 # Main interface loop that will run until the user chooses to exit
 def interface_loop(system):
@@ -116,10 +92,11 @@ def interface_loop(system):
         if choice not in range(0, 4) or choice == 0:
             return True
         elif choice == 1:
-            get_completed_delivery_times_and_truck_mileages(system)
+            delivery_routing_system()
         elif choice == 2:
             time_str = input("Please enter a time in the format HH:MM \n")
-            get_all_packages_status_at_time(time_str, system)
+            time = convert_time_str_to_time(time_str)
+            delivery_routing_system(time)
         elif choice == 3:
             print("Option 3")
     except ValueError:
