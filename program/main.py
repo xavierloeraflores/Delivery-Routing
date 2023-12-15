@@ -16,7 +16,7 @@ def delivery_routing_system(time=None):
     delivery_algorithm(System.truck1, time)
     delivery_algorithm(System.truck2, time)
     delivery_algorithm(System.truck3, time)
-    System.printSystem()
+    System.print_system()
 
 def load_packages():
     packages = PackageList.packages
@@ -42,7 +42,6 @@ def delivery_algorithm(truck, time=None):
     while((time == None or time >truck.time) and next_package_id != None):
         truck.deliver_package(next_package_id, System.hash_table)
         next_package_id = identify_next_package(truck)
-    print_green('--------- Truck Finished ---------')
 
 def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
