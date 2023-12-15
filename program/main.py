@@ -11,9 +11,9 @@ from DistanceMatrix import DistanceMatrix
 from System import System
 from Address import Address, AddressBook
 
-def deliveryRoutingSystem(time=None):
+def delivery_routing_system(time=None):
     print("This function will return a list of trucks and their packages")
-    loadPackages()
+    load_packages()
     print(System.truck1.packages)
     print(System.hash_table.get(34).status)
     deliveryAlgorithm(System.truck1, time)
@@ -23,7 +23,7 @@ def deliveryRoutingSystem(time=None):
     deliveryAlgorithm(System.truck3, time)
     System.printSystem()
 
-def loadPackages():
+def load_packages():
     packages = PackageList.packages
     for package in packages:
         delivery_package = DeliveryPackage(package)
@@ -159,7 +159,7 @@ class Main:
     finish_program = False
     System.create_system()
 
-    deliveryRoutingSystem()
+    delivery_routing_system()
     while not finish_program:
         finish_program = interface_loop(system)
     
