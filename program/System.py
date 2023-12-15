@@ -22,3 +22,9 @@ class System:
             delivery_package = DeliveryPackage(package)
             cur_idx = delivery_package.get_id()
             System.hash_table.insert(cur_idx, delivery_package)
+    @staticmethod
+    def printSystem():
+        print(System.hash_table)
+        print(System.truck1)
+        print(System.truck2)
+        print(System.truck3)

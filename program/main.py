@@ -17,6 +17,7 @@ def deliveryRoutingSystem(time=None):
     deliveryAlgorithm(System.truck1, time)
     deliveryAlgorithm(System.truck2, time)
     deliveryAlgorithm(System.truck3, time)
+    System.printSystem()
 
 def loadPackages():
     packages = PackageList.packages
