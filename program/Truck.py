@@ -28,7 +28,7 @@ class Truck:
         self.load = load
         self.packages = packages
         self.mileage = mileage
-        self.address = address_id
+        self.address_id = address_id
         self.depart_time = depart_time
         self.packages = packages
         self.time = depart_time

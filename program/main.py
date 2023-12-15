@@ -4,7 +4,7 @@
 
 from Utils import print_red, print_yellow, print_blue, print_green, convert_time_str_to_time
 from HashTable import HashTable
-from Package import Package, read_packages, raw_packages_to_packages
+from Package import Package, read_packages, raw_packages_to_packages, PackageList
 from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import DistanceMatrix
@@ -12,23 +12,48 @@ from System import System
 
 def deliveryRoutingSystem(time=None):
     print("This function will return a list of trucks and their packages")
+    loadPackages()
     deliveryAlgorithm(System.truck1, time)
     deliveryAlgorithm(System.truck2, time)
     deliveryAlgorithm(System.truck3, time)
 
-def deliveryAlgorithm(truck, time=None):
-    pass
+def loadPackages():
+    packages = PackageList.packages
+    for package in packages:
+        delivery_package = DeliveryPackage(package)
+        cur_idx = delivery_package.get_id()
+        if package.is_delayed():
+            System.truck3.load_package(cur_idx, System.hash_table)
+        elif package.has_deadline():
+            System.truck1.load_package(cur_idx, System.hash_table)
+        elif package.is_truck_2():
+            System.truck2.load_package(cur_idx, System.hash_table)
+        else:
+            if System.truck2.load<System.truck3.load:
+                System.truck2.load_package(cur_idx, System.hash_table)
+            else:
+                System.truck3.load_package(cur_idx, System.hash_table)
 
-def identify_next_package(truck, hash_table):
+
+def deliveryAlgorithm(truck, time=None):
+    next_package_id = -1
+    print_red(truck.packages)
+    while((time == None or time >truck.time) and next_package_id != None):
+        next_package_id = identify_next_package(truck)
+        print_yellow("Next package id: " + str(next_package_id))
+
+def identify_next_package(truck):
     print("This function will return the next package to be delivered")
-    undelivered_packages = truck.get_undelivered_packages(hash_table)
-    current_address_id = truck.get_address_id()
+    undelivered_packages = truck.get_undelivered_packages(System.hash_table)
+    print_yellow("Undelivered packages: " + str(undelivered_packages))
+    current_address_id = truck.address_id
     undelivered_packages_addresses = []
     closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
     for package_id in undelivered_packages:
-        package = hash_table.get(package_id)
+        package = System.hash_table.get(package_id)
         if package.address_id == closest_address_id:
             return package_id
+    return None
 
 def get_completed_delivery_times_and_truck_mileages(system):
     print("This function will print the completed delivery times and truck mileages")
@@ -124,6 +149,9 @@ class Main:
     print_system(system)
     print_green("Package Delivery Routing Program")
     finish_program = False
+    System.create_system()
+
+    deliveryRoutingSystem()
     while not finish_program:
         finish_program = interface_loop(system)
     
