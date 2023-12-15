@@ -8,6 +8,16 @@ from Package import Package, read_packages, raw_packages_to_packages
 from Truck import Truck
 from DeliveryPackage import DeliveryPackage, Status
 from DistanceMatrix import DistanceMatrix
+from System import System
+
+def deliveryRoutingSystem(time=None):
+    print("This function will return a list of trucks and their packages")
+    deliveryAlgorithm(System.truck1, time)
+    deliveryAlgorithm(System.truck2, time)
+    deliveryAlgorithm(System.truck3, time)
+
+def deliveryAlgorithm(truck, time=None):
+    pass
 
 def identify_next_package(truck, hash_table):
     print("This function will return the next package to be delivered")
