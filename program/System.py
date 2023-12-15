@@ -1,7 +1,7 @@
 from Truck import Truck
 from HashTable import HashTable
 from DeliveryPackage import DeliveryPackage
-from Package import read_packages, raw_packages_to_packages
+from Package import read_packages, raw_packages_to_packages, PackageList
 
 class System:
     truck1 = None
@@ -24,7 +24,9 @@ class System:
             System.hash_table.insert(cur_idx, delivery_package)
     @staticmethod
     def printSystem():
-        print(System.hash_table)
         print(System.truck1)
         print(System.truck2)
         print(System.truck3)
+        for package in PackageList.packages:
+            delivery_package = System.hash_table.get(package.get_id())
+            print(str(delivery_package))
