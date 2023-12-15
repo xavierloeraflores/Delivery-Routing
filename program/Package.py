@@ -90,3 +90,8 @@ class Package:
     # Boolean check for must be delivered with
     def is_bundled(self):
         return "Must be delivered with" in self.notes
+
+# PackageList class for the package list
+class PackageList:
+    raw_packages = read_packages()
+    packages = raw_packages_to_packages(raw_packages)

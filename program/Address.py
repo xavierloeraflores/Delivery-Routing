@@ -21,24 +21,28 @@ def get_address_list():
         idx += 1
     return address_list
 
-# Get an address object by its id
-def get_address_by_id(address_id):
-    address_list = get_address_list()
-    for address in address_list:
-        if address.id == address_id:
-            return address
-    return None
-
-# Get an address object by its street
-def get_address_by_street(street):
-    address_list = get_address_list()
-    for address in address_list:
-        if address.street == street:
-            return address
-    return None
-
 # Address class
 class Address:
     def __init__(self, id, street):
         self.id = id
         self.street = street
+
+# AddressBook class for looking up addresses
+class AddressBook:
+    addresses = read_addresses()
+    address_list = get_address_list()
+        # Get an address object by its id
+    @staticmethod
+    def get_address_by_id(address_id):
+        for address in AddressBook.address_list:
+            if address.id == address_id:
+                return address
+        return None
+
+    # Get an address object by its street
+    @staticmethod
+    def get_address_by_street( street):
+        for address in AddressBook.address_list:
+            if address.street == street:
+                return address
+        return None
