@@ -12,13 +12,8 @@ from System import System
 from Address import Address, AddressBook
 
 def delivery_routing_system(time=None):
-    print("This function will return a list of trucks and their packages")
     load_packages()
-    print(System.truck1.packages)
-    print(System.hash_table.get(34).status)
     delivery_algorithm(System.truck1, time)
-    print(System.hash_table.get(34).status)
-    print(System.truck1.packages)
     delivery_algorithm(System.truck2, time)
     delivery_algorithm(System.truck3, time)
     System.printSystem()
@@ -50,28 +45,16 @@ def delivery_algorithm(truck, time=None):
 
 def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
-    # print_yellow("Undelivered packages: " + str(undelivered_packages))
     current_address_id = int(truck.address_id)
-    # print_yellow("Current address id: " + str(current_address_id))
     undelivered_packages_addresses = []
     for package_id in undelivered_packages:
         package = System.hash_table.get(package_id)
-        # print_yellow("----Package Address: " + str(package.address))
-        # print_yellow("Raw Address: " + str(package.package))
         address_id = int(package.address.id)
         undelivered_packages_addresses.append(address_id)
-    # print_yellow("Undelivered packages addresses: " + str(undelivered_packages_addresses))
-    # print_blue(undelivered_packages_addresses)
     closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
-    # print_blue(undelivered_packages_addresses)
-    # print_blue('***********')
     for package_id in undelivered_packages:
-        # print_green("Package id: " + str(package_id))
         package_address_id = int(System.hash_table.get(package_id).address.id)
-        # print_blue("Package address id: " + str(package.get_id() ))
-        # print(closest_address_id, package_address_id)
         if package_address_id == closest_address_id:
-            # print_green(True)
             return package_id
     return None
 
@@ -80,7 +63,7 @@ def identify_next_package(truck):
 
 
 # Main interface loop that will run until the user chooses to exit
-def interface_loop(system):
+def interface_loop():
     print("=====================================================")
     print("Please choose an option. Enter number and press enter.")
     print("0. Exit")
@@ -134,10 +117,9 @@ class Main:
     system = create_system()
     print_green("Package Delivery Routing Program")
     finish_program = False
-    System.create_system()
 
-    delivery_routing_system()
     while not finish_program:
-        finish_program = interface_loop(system)
+        System.create_system()
+        finish_program = interface_loop()
     
     print_red("Closing Program")

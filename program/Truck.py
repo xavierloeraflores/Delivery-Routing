@@ -7,7 +7,7 @@ from DistanceMatrix import DistanceMatrix
 class Truck:
     id : type(int)
     capacity : type(int)
-    speed : type(int)
+    speed : type(float)
     load : type(int)
     packages : type(list)
     mileage : type(int)
@@ -24,7 +24,7 @@ class Truck:
             load = len(packages)
         self.id = id
         self.capacity = capacity
-        self.speed = speed
+        self.speed = speed/60 # convert to miles per minute
         self.load = load
         self.packages = packages
         self.mileage = mileage
