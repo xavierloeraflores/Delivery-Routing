@@ -38,7 +38,6 @@ def load_packages():
             else:
                 System.truck3.load_package(cur_idx, System.hash_table)
 
-
 def delivery_algorithm(truck, time=None):
     truck.attempt_depart(System.hash_table, time)
     next_package_id = identify_next_package(truck)
@@ -69,10 +68,6 @@ def identify_next_package(truck):
         return 9
     return None
 
-
-
-
-
 # Main interface loop that will run until the user chooses to exit
 def interface_loop():
     print_blue("=====================================================")
@@ -96,8 +91,6 @@ def interface_loop():
         print_red("Invalid input")
         return True
     return False
-
-
 
 # Main program
 class Main:

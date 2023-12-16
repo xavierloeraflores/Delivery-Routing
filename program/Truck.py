@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from DeliveryPackage import DeliveryPackage, Status
+from DeliveryPackage import Status
 from Utils import get_distance_traveled, get_time_traveled
 from DistanceMatrix import DistanceMatrix
 
@@ -100,8 +100,6 @@ class Truck:
         minutes_traveled = get_time_traveled(distance, self.speed)
         time_delta = timedelta(minutes=minutes_traveled)
         self.time = self.time+time_delta
-
-
 
     # travel for a given time
     def travel_for_time_in_min(self, min):
