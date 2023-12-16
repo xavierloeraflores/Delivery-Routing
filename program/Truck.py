@@ -78,14 +78,15 @@ class Truck:
     def deliver_package(self, package_id, hash_table):
         package = hash_table.get(package_id)
         distance = DistanceMatrix.get_distance_between_addresses(self.address_id, package.address.id) 
-        package.set_status_to_delivered()
         self.address_id = package.address.id
-        hash_table.update(package_id, package)
         self.load -= 1
         self.mileage += distance
         minutes_traveled = get_time_traveled(distance, self.speed)
         time_delta = timedelta(minutes=minutes_traveled)
         self.time = self.time+time_delta
+        package.set_delivery_time(self.time)
+        package.set_status_to_delivered()
+        hash_table.update(package_id, package)
     
     # return the truck to the hub
     def return_to_hub(self):

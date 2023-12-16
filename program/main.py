@@ -4,12 +4,11 @@
 
 from Utils import print_red, print_yellow, print_blue, print_green, convert_time_str_to_time
 from HashTable import HashTable
-from Package import Package, read_packages, raw_packages_to_packages, PackageList
+from Package import PackageList
 from Truck import Truck
-from DeliveryPackage import DeliveryPackage, Status
+from DeliveryPackage import DeliveryPackage
 from DistanceMatrix import DistanceMatrix
 from System import System
-from Address import Address, AddressBook
 
 def delivery_routing_system(time=None):
     load_packages()
@@ -87,35 +86,10 @@ def interface_loop():
         print_red("Invalid input")
     return False
 
-def create_system():
-    hash_table = HashTable(40)
-    truck1 = Truck(1)
-    truck2 = Truck(2)
-    truck3 = Truck(3)
-    raw_packages = read_packages()
-    packages = raw_packages_to_packages(raw_packages)
-    for package in packages:
-        delivery_package = DeliveryPackage(package)
-        cur_idx = delivery_package.get_id()
-        hash_table.insert(cur_idx, delivery_package)
-        if package.is_delayed():
-            truck3.load_package(cur_idx, hash_table)
-        elif package.has_deadline():
-            truck1.load_package(cur_idx, hash_table)
-        elif package.is_truck_2():
-            truck2.load_package(cur_idx, hash_table)
-        else:
-            if truck2.load<truck3.load:
-                truck2.load_package(cur_idx, hash_table)
-            else:
-                truck3.load_package(cur_idx, hash_table)
-    return [hash_table, packages, truck1, truck2, truck3]
-
 
 
 # Main program
 class Main:
-    system = create_system()
     print_green("Package Delivery Routing Program")
     finish_program = False
 

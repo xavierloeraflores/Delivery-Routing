@@ -3,6 +3,7 @@ from HashTable import HashTable
 from DeliveryPackage import DeliveryPackage
 from Package import read_packages, raw_packages_to_packages, PackageList
 from datetime import datetime
+from Utils import print_blue
 
 class System:
     truck1 = None
@@ -26,9 +27,10 @@ class System:
             System.hash_table.insert(cur_idx, delivery_package)
     @staticmethod
     def print_system():
-        print(System.truck1)
-        print(System.truck2)
-        print(System.truck3)
+        print_blue(System.truck1)
+        print_blue(System.truck2)
+        print_blue(System.truck3)
+        print("Total Distance Traveled: "+str(System.truck1.mileage+System.truck2.mileage+System.truck3.mileage)+ " miles")
         for package in PackageList.packages:
             delivery_package = System.hash_table.get(package.get_id())
             delivery_package.print()

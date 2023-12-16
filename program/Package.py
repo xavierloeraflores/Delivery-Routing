@@ -28,6 +28,11 @@ class Package:
         self.deadline = row[5]
         self.weight = row[6]
         self.notes = row[7]
+        if self.has_wrong_address():
+            self.address = "410 S State St"
+            self.city = "Salt Lake City"
+            self.state = "UT"
+            self.zip = "84111"
     
     # string representation of the package
     def __str__(self):

@@ -32,7 +32,15 @@ class DeliveryPackage:
         self.address = AddressBook.get_address_by_street(package.get_address())
 
     def print(self):
-        package_string = str(self.package)
+        package_string = ""
+        package_string += f"Package: {self.package.get_id()}"
+        package_string += f"\t| Status: {self.status.value}"
+        if(self.status == Status.delivered):
+            package_string += f"\t| Delivered: {self.delivery_time.hour}:{self.delivery_time.minute}:{self.delivery_time.second}"
+        else:
+            package_string += "\t| Delivered:\t"
+        package_string += f"\t| Truck: {self.truck_id}"
+        package_string += f"\t| Address: {self.address.street}"
         if(self.status == Status.delivered):
             print_green(package_string)
         elif(self.status == Status.enroute):
@@ -41,7 +49,6 @@ class DeliveryPackage:
             print_red(package_string)
 
 
-    
     # get the status of the package
     def get_status(self):
         return self.status
@@ -57,20 +64,7 @@ class DeliveryPackage:
     def get_delivery_time(self):
         return self.delivery_time
     
-    def get_status_at_time(self, time, truck):
-        depart_time = truck.get_depart_time()
-        if self.delivery_time is None:
-            return self.status
-        if depart_time < time and time < self.delivery_time:
-            return Status.enroute
-        if time > self.delivery_time:
-            return Status.delivered
-        if time < depart_time:
-            return Status.hub
-            
-    
     # Setters
-
     # Sets the status of the package to delivered
     def set_status_to_delivered(self):
         self.status = Status.delivered
