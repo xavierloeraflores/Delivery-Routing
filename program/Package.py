@@ -1,5 +1,4 @@
 from Utils import CSVReader
-from datetime import time
 
 # Read the package list from the CSV file
 def read_packages():
@@ -33,10 +32,6 @@ class Package:
             self.city = "Salt Lake City"
             self.state = "UT"
             self.zip = "84111"
-    
-    # Getters for the package attributes
-
-
     
     # Boolean check for deadline
     def has_deadline(self):

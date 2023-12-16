@@ -1,7 +1,7 @@
 from Truck import Truck
 from HashTable import HashTable
 from DeliveryPackage import DeliveryPackage
-from Package import read_packages, raw_packages_to_packages, PackageList
+from Package import PackageList
 from datetime import datetime
 from Utils import print_blue
 
@@ -19,12 +19,12 @@ class System:
         System.truck2 = Truck(2)
         truck3_depart_time = datetime(year=2000, month=1, day=1,hour=9,minute=5,second=0)
         System.truck3 = Truck(3, truck3_depart_time)
-        raw_packages = read_packages()
-        packages = raw_packages_to_packages(raw_packages)
+        packages = PackageList.packages
         for package in packages:
             delivery_package = DeliveryPackage(package)
             cur_idx = delivery_package.get_id()
             System.hash_table.insert(cur_idx, delivery_package)
+    # print the system
     @staticmethod
     def print_system():
         print_blue(System.truck1)

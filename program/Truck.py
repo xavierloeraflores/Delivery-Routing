@@ -48,9 +48,6 @@ class Truck:
     def __str__(self): 
         return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles"
 
-    # Getters for the truck attributes
-    def get_depart_time(self):
-        return self.depart_time
     
     # depart the truck and set the status of the packages to enroute
     def depart(self, hash_table, time=None):
@@ -68,6 +65,7 @@ class Truck:
                 undelivered_packages.append(package_id)
         return undelivered_packages
     
+    # get the list of undelivered packages addresses
     def get_undelivered_packages_addresses(self, undelivered_packages, hash_table):
         addresses = []
         for package_id in undelivered_packages:
