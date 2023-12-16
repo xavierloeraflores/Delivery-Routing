@@ -5,6 +5,7 @@ from Package import PackageList
 from datetime import datetime
 from Utils import print_blue
 
+# System class
 class System:
     truck1 = None
     truck2 = None
@@ -24,6 +25,7 @@ class System:
             delivery_package = DeliveryPackage(package)
             cur_idx = delivery_package.get_id()
             System.hash_table.insert(cur_idx, delivery_package)
+
     # print the system
     @staticmethod
     def print_system():

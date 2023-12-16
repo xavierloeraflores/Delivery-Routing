@@ -38,6 +38,7 @@ def load_packages():
             else:
                 System.truck3.load_package(cur_idx, System.hash_table)
 
+# delivery algorithm for all trucks
 def delivery_algorithm(truck, time=None):
     truck.attempt_depart(System.hash_table, time)
     next_package_id = identify_next_package(truck)
@@ -47,6 +48,7 @@ def delivery_algorithm(truck, time=None):
     truck.return_to_hub()
     return truck.time
 
+# algorithm to identify the next package to deliver
 def identify_next_package(truck):
     contains_wrong_address_package = False
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
@@ -96,7 +98,6 @@ def interface_loop():
 class Main:
     print_green("Package Delivery Routing Program")
     finish_program = False
-
     while not finish_program:
         System.create_system()
         finish_program = interface_loop()

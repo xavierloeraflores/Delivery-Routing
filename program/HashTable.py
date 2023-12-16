@@ -24,7 +24,6 @@ class HashTable:
     def insert(self, key, value):
         hashed_index = self.hash_key(key)
         key_value_node = Node(key, value)
-
         if self.table[hashed_index] == None:
             self.table[hashed_index] = key_value_node
         else:
@@ -38,7 +37,6 @@ class HashTable:
     def update(self, key, value):
         hashed_index = self.hash_key(key)
         key_value_node = Node(key, value)
-
         cur = self.table[hashed_index]
         while cur != None:
             if cur.key == key:
@@ -50,7 +48,6 @@ class HashTable:
     def get(self, key):
         hashed_index = self.hash_key(key)
         cur = self.table[hashed_index]
-
         while cur != None:
             if cur.key == key:
                 return cur.value

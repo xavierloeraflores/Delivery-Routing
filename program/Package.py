@@ -10,6 +10,7 @@ def read_packages():
             packages.append(row)
     return packages
 
+# Convert the raw package data to package objects
 def raw_packages_to_packages(raw_packages):
     packages = []
     for package in raw_packages:

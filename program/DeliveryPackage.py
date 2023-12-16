@@ -31,6 +31,7 @@ class DeliveryPackage:
             self.deadline = convert_time_str_to_time_extended(package.deadline)
         self.address = AddressBook.get_address_by_street(package.address)
 
+    # Print the package information
     def print(self):
         package_string = ""
         package_string += f"Package: {str(self.package.id).zfill(2)}"
@@ -55,11 +56,10 @@ class DeliveryPackage:
         else:
             print_red(package_string)
     
+    # Get the package id
     def get_id(self):
         return self.package.id
     
-    
-    # Setters
     # Sets the status of the package to delivered
     def set_status_to_delivered(self):
         self.status = Status.delivered
