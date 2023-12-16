@@ -3,9 +3,7 @@
 # Date:         12/08/2023
 
 from Utils import print_red, print_yellow, print_blue, print_green, convert_time_str_to_time
-from HashTable import HashTable
 from Package import PackageList
-from Truck import Truck
 from DeliveryPackage import DeliveryPackage
 from DistanceMatrix import DistanceMatrix
 from System import System
@@ -81,10 +79,12 @@ def interface_loop():
         if choice not in range(0, 4) or choice == 0:
             return True
         elif choice == 1:
+            print_yellow("Running delivery routing system")
             delivery_routing_system()
         elif choice == 2:
             time_str = input("Please enter a time in the format HH:MM \n")
             time = convert_time_str_to_time(time_str)
+            print_yellow("Running delivery routing system until time: "+time_str)
             delivery_routing_system(time)
     except ValueError:
         print_red("Invalid input")
