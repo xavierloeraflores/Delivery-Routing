@@ -49,18 +49,24 @@ def delivery_algorithm(truck, time=None):
     return truck.time
 
 def identify_next_package(truck):
+    contains_wrong_address_package = False
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
     current_address_id = int(truck.address_id)
     undelivered_packages_addresses = []
     for package_id in undelivered_packages:
-        package = System.hash_table.get(package_id)
-        address_id = int(package.address.id)
-        undelivered_packages_addresses.append(address_id)
+        if package_id == 9:
+            contains_wrong_address_package = True
+        else:
+            package = System.hash_table.get(package_id)
+            address_id = int(package.address.id)
+            undelivered_packages_addresses.append(address_id)
     closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
     for package_id in undelivered_packages:
         package_address_id = int(System.hash_table.get(package_id).address.id)
         if package_address_id == closest_address_id:
             return package_id
+    if contains_wrong_address_package and truck.load == 1:
+        return 9
     return None
 
 
