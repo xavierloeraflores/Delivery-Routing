@@ -17,7 +17,7 @@ class Truck:
     has_priority_packages : type(bool)
 
     # __init__ Constructor
-    def __init__(self, id,depart_time=None, capacity=16, speed=18, address_id=0,  packages=None, mileage=0, load=None, has_priority_packages=True  ):
+    def __init__(self, id,depart_time=None, capacity=16, speed=18, address_id=1,  packages=None, mileage=0, load=None, has_priority_packages=True  ):
         if packages is None:
             packages = []
         if load is None:
@@ -89,7 +89,7 @@ class Truck:
     
     # return the truck to the hub
     def return_to_hub(self):
-        distance = DistanceMatrix.get_distance_between_addresses(self.address_id, 0) 
+        distance = DistanceMatrix.get_distance_between_addresses(self.address_id, 1) 
         self.address_id = 0
         self.mileage += distance
         minutes_traveled = get_time_traveled(distance, self.speed)
