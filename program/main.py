@@ -28,10 +28,10 @@ def load_packages():
         cur_idx = delivery_package.get_id()
         if package.is_delayed() or cur_idx == 9:
             System.truck3.load_package(cur_idx, System.hash_table)
-        elif package.has_deadline() or package.is_bundled() or cur_idx == 19:
-            System.truck1.load_package(cur_idx, System.hash_table)
-        elif package.is_truck_2():
+        elif package.is_truck_2() or package.is_bundled() or cur_idx == 19:
             System.truck2.load_package(cur_idx, System.hash_table)
+        elif package.has_deadline():
+            System.truck1.load_package(cur_idx, System.hash_table)
         else:
             if System.truck2.load<System.truck3.load:
                 System.truck2.load_package(cur_idx, System.hash_table)
@@ -54,14 +54,19 @@ def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
     current_address_id = int(truck.address_id)
     undelivered_packages_addresses = []
+    priority_packages_addresses = []
     for package_id in undelivered_packages:
+        package = System.hash_table.get(package_id)
+        address_id = int(package.address.id)
         if package_id == 9:
             contains_wrong_address_package = True
+        elif package.package.has_deadline():
+            priority_packages_addresses.append(address_id)
         else:
-            package = System.hash_table.get(package_id)
-            address_id = int(package.address.id)
             undelivered_packages_addresses.append(address_id)
     closest_address_id = DistanceMatrix.get_closest_address(current_address_id, undelivered_packages_addresses)
+    if len(priority_packages_addresses) > 0:
+        closest_address_id = DistanceMatrix.get_closest_address(current_address_id, priority_packages_addresses)
     for package_id in undelivered_packages:
         package_address_id = int(System.hash_table.get(package_id).address.id)
         if package_address_id == closest_address_id:
