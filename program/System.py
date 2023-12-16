@@ -2,6 +2,7 @@ from Truck import Truck
 from HashTable import HashTable
 from DeliveryPackage import DeliveryPackage
 from Package import read_packages, raw_packages_to_packages, PackageList
+from datetime import datetime
 
 class System:
     truck1 = None
@@ -15,7 +16,8 @@ class System:
         System.hash_table = HashTable(40)
         System.truck1 = Truck(1)
         System.truck2 = Truck(2)
-        System.truck3 = Truck(3)
+        truck3_depart_time = datetime(year=2000, month=1, day=1,hour=9,minute=5,second=0)
+        System.truck3 = Truck(3, truck3_depart_time)
         raw_packages = read_packages()
         packages = raw_packages_to_packages(raw_packages)
         for package in packages:
