@@ -60,7 +60,7 @@ class Truck:
     def get_undelivered_packages(self, hash_table):
         undelivered_packages = []
         for package_id in self.packages:
-            package_status = hash_table.get(package_id).get_status()
+            package_status = hash_table.get(package_id).status
             if package_status== Status.enroute or package_status == Status.hub:
                 undelivered_packages.append(package_id)
         return undelivered_packages
@@ -113,7 +113,7 @@ class Truck:
         if(self.has_priority_packages == False):
             return priority_packages
         for package_id in self.packages:
-            if hash_table.get(package_id).get_status() == Status.enroute:
+            if hash_table.get(package_id).status == Status.enroute:
                 priority_packages.append(package_id)
         if (len(priority_packages) == 0):
             self.has_priority_packages = False

@@ -47,22 +47,10 @@ class DeliveryPackage:
             print_yellow(package_string)
         else:
             print_red(package_string)
-
-
-    # get the status of the package
-    def get_status(self):
-        return self.status
-    
-    # get the package object
-    def get_package(self):
-        return self.package 
     
     def get_id(self):
         return self.package.id
     
-    # get the delivery time of the package
-    def get_delivery_time(self):
-        return self.delivery_time
     
     # Setters
     # Sets the status of the package to delivered
