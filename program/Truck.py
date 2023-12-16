@@ -46,11 +46,15 @@ class Truck:
 
     # string representation of the truck
     def __str__(self): 
-        return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles"
+        return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles | Depart Time: {self.depart_time.hour}:{self.depart_time.minute}"
 
+    # set the departure time of the truck
+    def set_depart_time(self, depart_time):
+        self.depart_time = depart_time
+        self.time = depart_time
     
     # depart the truck and set the status of the packages to enroute
-    def depart(self, hash_table, time=None):
+    def attempt_depart(self, hash_table, time=None):
         if time is None or time > self.depart_time:
             for package_id in self.packages:
                 package = hash_table.get(package_id)

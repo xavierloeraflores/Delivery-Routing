@@ -10,13 +10,19 @@ from DeliveryPackage import DeliveryPackage
 from DistanceMatrix import DistanceMatrix
 from System import System
 
+# delivery routing system
 def delivery_routing_system(time=None):
     load_packages()
-    delivery_algorithm(System.truck1, time)
-    delivery_algorithm(System.truck2, time)
+    truck1_time = delivery_algorithm(System.truck1, time)
+    truck2_time = delivery_algorithm(System.truck2, time)
+    if truck1_time < truck2_time:
+        System.truck3.set_depart_time(truck1_time)
+    else:
+        System.truck3.set_depart_time(truck2_time)
     delivery_algorithm(System.truck3, time)
     System.print_system()
 
+# load the packages into the trucks
 def load_packages():
     packages = PackageList.packages
     for package in packages:
@@ -36,12 +42,13 @@ def load_packages():
 
 
 def delivery_algorithm(truck, time=None):
-    truck.depart(System.hash_table, time)
+    truck.attempt_depart(System.hash_table, time)
     next_package_id = identify_next_package(truck)
     while((time == None or time >truck.time) and next_package_id != None):
         truck.deliver_package(next_package_id, System.hash_table)
         next_package_id = identify_next_package(truck)
     truck.return_to_hub()
+    return truck.time
 
 def identify_next_package(truck):
     undelivered_packages = truck.get_undelivered_packages(System.hash_table)
