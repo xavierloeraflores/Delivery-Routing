@@ -24,7 +24,7 @@ def load_packages():
         cur_idx = delivery_package.get_id()
         if package.is_delayed():
             System.truck3.load_package(cur_idx, System.hash_table)
-        elif package.has_deadline():
+        elif package.has_deadline() or package.is_bundled() or package.get_id() == 19:
             System.truck1.load_package(cur_idx, System.hash_table)
         elif package.is_truck_2():
             System.truck2.load_package(cur_idx, System.hash_table)

@@ -34,10 +34,6 @@ class Package:
             self.state = "UT"
             self.zip = "84111"
     
-    # string representation of the package
-    def __str__(self):
-        return f"{self.id}, {self.address}, {self.city}, {self.state}, {self.zip}, {self.deadline}, {self.weight}, {self.notes}"
-
     # Getters for the package attributes
 
     # Get the package id
@@ -48,25 +44,11 @@ class Package:
     def get_address(self):
         return self.address
     
-    # Get the package city
-    def get_city(self):
-        return self.city
-    
-    # Get the package state
-    def get_state(self):
-        return self.state
-    
-    # Get the package zip
-    def get_zip(self):
-        return self.zip
     
     # Get the package deadline
     def get_deadline(self):
         return self.deadline
     
-    # Get the package weight
-    def get_weight(self):
-        return self.weight
     
     # Get the package notes
     def get_notes(self):
