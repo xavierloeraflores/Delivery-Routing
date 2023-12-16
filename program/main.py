@@ -94,7 +94,7 @@ def interface_loop():
             delivery_routing_system(time)
     except ValueError:
         print_red("Invalid input")
-        return False
+        return True
     return False
 
 
