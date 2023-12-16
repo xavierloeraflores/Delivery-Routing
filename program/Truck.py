@@ -46,7 +46,9 @@ class Truck:
 
     # string representation of the truck
     def __str__(self): 
-        return f"Truck: {self.id} | Packages: {self.load} | Mileage:{self.mileage} miles | Depart Time: {self.depart_time.hour}:{self.depart_time.minute}"
+        if self.load == 0:
+            return f"Truck: {self.id} | Packages: {self.load} | Mileage:{round(self.mileage,4)} miles | Depart Time: {self.depart_time.hour}:{self.depart_time.minute}:{self.depart_time.second} | Return Time: {self.time.hour}:{self.time.minute}:{self.time.second}"
+        return f"Truck: {self.id} | Packages: {self.load} | Mileage:{round(self.mileage,4)} miles | Depart Time: {self.depart_time.hour}:{self.depart_time.minute}:{self.depart_time.second} | Return Time: "
 
     # set the departure time of the truck
     def set_depart_time(self, depart_time):
