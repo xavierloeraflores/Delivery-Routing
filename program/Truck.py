@@ -86,6 +86,16 @@ class Truck:
         minutes_traveled = get_time_traveled(distance, self.speed)
         time_delta = timedelta(minutes=minutes_traveled)
         self.time = self.time+time_delta
+    
+    # return the truck to the hub
+    def return_to_hub(self):
+        distance = DistanceMatrix.get_distance_between_addresses(self.address_id, 0) 
+        self.address_id = 0
+        self.mileage += distance
+        minutes_traveled = get_time_traveled(distance, self.speed)
+        time_delta = timedelta(minutes=minutes_traveled)
+        self.time = self.time+time_delta
+
 
 
     # travel for a given time
