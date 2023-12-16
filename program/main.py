@@ -76,10 +76,10 @@ def identify_next_package(truck):
 # Main interface loop that will run until the user chooses to exit
 def interface_loop():
     print_blue("=====================================================")
-    print_yellow("Please choose an option. Enter number and press enter.")
-    print("0. Exit")
-    print("1. Get completed delivery times and truck mileages")
-    print("2. Get all packages's status and truck mileages at a given time")
+    print_blue("Please choose an option. Enter number and press enter.")
+    print_yellow("0. Exit")
+    print_yellow("1. Get completed delivery times and truck mileages")
+    print_yellow("2. Get all packages's status and truck mileages at a given time")
     try:
         choice = int(input("Please choose an option:"))
         if choice not in range(0, 4) or choice == 0:
