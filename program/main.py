@@ -22,9 +22,9 @@ def load_packages():
     for package in packages:
         delivery_package = DeliveryPackage(package)
         cur_idx = delivery_package.get_id()
-        if package.is_delayed():
+        if package.is_delayed() or cur_idx == 9:
             System.truck3.load_package(cur_idx, System.hash_table)
-        elif package.has_deadline() or package.is_bundled() or package.get_id() == 19:
+        elif package.has_deadline() or package.is_bundled() or cur_idx == 19:
             System.truck1.load_package(cur_idx, System.hash_table)
         elif package.is_truck_2():
             System.truck2.load_package(cur_idx, System.hash_table)

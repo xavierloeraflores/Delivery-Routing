@@ -32,5 +32,5 @@ class System:
         print_blue(System.truck3)
         print("Total Distance Traveled: "+str(System.truck1.mileage+System.truck2.mileage+System.truck3.mileage)+ " miles")
         for package in PackageList.packages:
-            delivery_package = System.hash_table.get(package.get_id())
+            delivery_package = System.hash_table.get(package.id)
             delivery_package.print()

@@ -36,24 +36,8 @@ class Package:
     
     # Getters for the package attributes
 
-    # Get the package id
-    def get_id(self):
-        return self.id
-    
-    # Get the package address
-    def get_address(self):
-        return self.address
-    
-    
-    # Get the package deadline
-    def get_deadline(self):
-        return self.deadline
-    
-    
-    # Get the package notes
-    def get_notes(self):
-        return self.notes
 
+    
     # Boolean check for deadline
     def has_deadline(self):
         return self.deadline != "EOD"

@@ -27,13 +27,13 @@ class DeliveryPackage:
         self.delivery_time = None
         self.deadline = None
         self.truck_id = None
-        if package.get_deadline() != "EOD":
-            self.deadline = convert_time_str_to_time_extended(package.get_deadline())
-        self.address = AddressBook.get_address_by_street(package.get_address())
+        if package.deadline != "EOD":
+            self.deadline = convert_time_str_to_time_extended(package.deadline)
+        self.address = AddressBook.get_address_by_street(package.address)
 
     def print(self):
         package_string = ""
-        package_string += f"Package: {self.package.get_id()}"
+        package_string += f"Package: {self.package.id}"
         package_string += f"\t| Status: {self.status.value}"
         if(self.status == Status.delivered):
             package_string += f"\t| Delivered: {self.delivery_time.hour}:{self.delivery_time.minute}:{self.delivery_time.second}"
@@ -58,7 +58,7 @@ class DeliveryPackage:
         return self.package 
     
     def get_id(self):
-        return self.package.get_id()
+        return self.package.id
     
     # get the delivery time of the package
     def get_delivery_time(self):
