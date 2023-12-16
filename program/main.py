@@ -64,12 +64,11 @@ def identify_next_package(truck):
 
 # Main interface loop that will run until the user chooses to exit
 def interface_loop():
-    print("=====================================================")
-    print("Please choose an option. Enter number and press enter.")
+    print_blue("=====================================================")
+    print_yellow("Please choose an option. Enter number and press enter.")
     print("0. Exit")
     print("1. Get completed delivery times and truck mileages")
     print("2. Get all packages's status and truck mileages at a given time")
-    print("3. Get specific packages's status at a given time")
     try:
         choice = int(input("Please choose an option:"))
         if choice not in range(0, 4) or choice == 0:
@@ -80,10 +79,9 @@ def interface_loop():
             time_str = input("Please enter a time in the format HH:MM \n")
             time = convert_time_str_to_time(time_str)
             delivery_routing_system(time)
-        elif choice == 3:
-            print("Option 3")
     except ValueError:
         print_red("Invalid input")
+        return False
     return False
 
 
