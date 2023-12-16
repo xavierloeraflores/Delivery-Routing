@@ -33,14 +33,21 @@ class DeliveryPackage:
 
     def print(self):
         package_string = ""
-        package_string += f"Package: {self.package.id}"
-        package_string += f"\t| Status: {self.status.value}"
+        package_string += f"Package: {str(self.package.id).zfill(2)}"
+        package_string += f"| Truck: {self.truck_id}  "
+        package_string += f"| Status: {self.status.value}\t"
         if(self.status == Status.delivered):
-            package_string += f"\t| Delivered: {self.delivery_time.hour}:{self.delivery_time.minute}:{self.delivery_time.second}"
+            package_string += f"| Delivered: {str(self.delivery_time.hour).zfill(2)}:{str(self.delivery_time.minute).zfill(2)}:{str(self.delivery_time.second).zfill(2)}\t"
         else:
-            package_string += "\t| Delivered:\t"
-        package_string += f"\t| Truck: {self.truck_id}"
-        package_string += f"\t| Address: {self.address.street}"
+            package_string += "| Delivered:\t\t"
+        if(self.package.has_deadline()):
+            package_string += f"| Deadline: {str(self.deadline.hour).zfill(2)}:{str(self.deadline.minute).zfill(2)}:{str(self.deadline.second).zfill(2)}"
+        else:
+            package_string += "| Deadline: \t"
+        package_string += f"\t| Weight: {str(self.package.weight).zfill(2)} "
+        package_string += f"| Zip: {self.package.zip}"
+        package_string += f" | Address: {str(self.address.street).ljust(40)}"
+        package_string += f"| City: {self.package.city}"
         if(self.status == Status.delivered):
             print_green(package_string)
         elif(self.status == Status.enroute):
