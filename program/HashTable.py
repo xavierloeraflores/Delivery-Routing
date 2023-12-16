@@ -1,5 +1,3 @@
-capacity = 40
-
 # Node class
 class Node:
     def __init__(self, key, value):
@@ -10,19 +8,12 @@ class Node:
 # HashTable class
 class HashTable:
     # Constructor w/ initial capacity of 40 packages
-    def __init__(self, cap=capacity):
+    def __init__(self, cap=40):
         self.cap = cap
         self.size = 0
         self.table = []
         for _ in range(cap):   
             self.table.append(None)
-    # length of the table
-    def __len__(self):
-        return self.size
-    
-    # string representation of the table
-    def __str__(self):
-        return str(self.table)
 
     # hash_key() returns the hashed key
     def hash_key(self, key):
@@ -65,21 +56,3 @@ class HashTable:
                 return cur.value
             cur = cur.next
         return None
-
-    # remove() removes the node with the key
-    def remove(self, key):
-        hashed_index = self.hash_key(key)
-        prev = None
-        cur = self.table[hashed_index]
-        
-        while cur != None:
-            if cur.key == key:
-                if prev == None:
-                    self.table[hashed_index] = cur.next
-                else:
-                    prev.next = cur.next
-                self.size -= 1
-                return
-            prev = cur
-            cur = cur.next
-            
