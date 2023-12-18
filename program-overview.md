@@ -2,7 +2,7 @@
 
 ## Algorithm Justification
 
-The main core of the algorithm comes in two parts. The first part is the package loading into the trucks and the second part is the delivering of the packages using a greedy algorithm.
+The main core of the algorithm comes in two parts. The first part is the package loading into the trucks and the second part is the delivering of the packages using a nearest neighbor greedy algorithm.
 
 Packages loaded into the trucks in a way that would allow the first truck to delivery high priority packages first. The second truck would then deliver the truck 2 and bundled packages. The third truck would then deliver the delayed or wrong address packages. The remaining packages are distributed between truck 2 and truck 3 since the truck 1 driver needs to return to the hub to drive truck 3.
 
@@ -12,11 +12,11 @@ The deliver packages part of the algorithm is a greedy algorithm. The algorithm 
 
 #### Strength 1
 
-Greedy algorithms are simple to implement and understand. They make locally optimal choices that can create a result that is sufficiently efficient. The delivery routing program uses a greedy algorithm that optimizes for loading the priority packages across all trucks to be delivered on time and for finding the next closest package and then delivering it.
+Greedy algorithms are simple to implement and understand. They make locally optimal choices that can create a result that is sufficiently efficient. The delivery routing program uses a greedy algorithm that optimizes for loading the priority packages across all trucks to be delivered on time and then for finding the next closest package and then delivering it.
 
 #### Strength 2
 
-Greedy algorithms are great for finding a suitable solution quickly rather than spending resources finding the best most optimal solution. The delivery routing program uses a greedy algorithm that optimizes for finding the next closest package and then delivering it rather than finding the quickest route to deliver all packages considering all possible routes.
+Greedy algorithms are great for finding a suitable solution quickly rather than spending resources finding the best most optimal solution. The delivery routing program uses a nearest greedy algorithm that optimizes for finding the next closest package and then delivering it rather than finding the quickest route to deliver all packages considering all possible routes.
 
 ---
 
@@ -26,9 +26,13 @@ The algorithm was verified by running the program and checking the results again
 
 ### Alternative Algorithm Solutions
 
-#### Algorithm 1
+#### Alternative Algorithm 1
 
-#### Algorithm 2
+The A\* algorithm would be an excellent alternative to the greedy algorithm we used in our program. The A\* algorithm is a path finding algorithm that uses a heuristic to find the best path to a goal. The A\* algorithm differs from our greedy algorithm since its goal is to find the best path to deliver all packages.
+
+#### Alternative Algorithm 2
+
+Utilizing simulated annealing would be another alternative to the greedy algorithm we used in our program. Simulated annealing approximates the global optimum of a given function to find the best path by generating random potential solutions and then either accepting or rejecting. The simulated annealing algorithm differs from our greedy algorithm since its goal is to find the best path to deliver all packages.
 
 ---
 
