@@ -56,7 +56,11 @@ The delivery routing program uses a hash table data structure to store the packa
 
 #### Data Structure 1
 
+Instead of the adjacency matrix, the program could use a weighted adjacency list. The adjacency list would save on space at the cost of query time. Rather than storing vertexes a V x V grid O(V^2), the adjacency list would store a list that vertexes and edges of space O(V + E). The adjacency list would be a better choice if the program needed to save on space. However, query time would be slower since the program would need to iterate through the list to find the distance between two addresses with a speed of O(|V|) rather than having the constant O(1) lookup time of the adjacency matrix.
+
 #### Data Structure 2
+
+Alternatively to the hash table used to lookup packages, we can utilize a binary search tree. The binary search tree would avoid the need for collision resolution at the cost of query time. However, query time would be slower since the program would need to traverse the tree to find the package with a speed of O(log n) rather than having the constant O(1) lookup time of the hash table.
 
 ## Sources
 
