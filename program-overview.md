@@ -50,8 +50,14 @@ Lastly, I would implement a GUI to make the experience of using the program more
 
 ## Data Structure Verification
 
+The delivery routing program uses a hash table data structure to store the packages. The hash table data structure is used to store the packages since it allows for constant time lookup of the packages. The program uses a weighted adjacency matrix or distance matrix to store the distances between different addresses in the program since it allows for constant time lookup of the distances between addresses. Both the hash table and distance matrix data structures were verified by running the program and checking the results against the requirements of the project. The hash table returns a delivery package object which contains the delivery status, delivery time if delivered, address object, and package object(which contains raw package data such as address, deadline, city, zip code, and weight).
+
 ### Alternative Potential Data Structures
 
 #### Data Structure 1
 
 #### Data Structure 2
+
+## Sources
+
+I did not use any external sources to complete this writeup.
