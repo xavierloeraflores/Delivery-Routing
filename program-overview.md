@@ -38,6 +38,14 @@ Utilizing simulated annealing would be another alternative to the greedy algorit
 
 ## Modifications To The Program Solution
 
+I would make the following modifications to the program solution:
+
+Firstly, I would rather have the system take in a parameter indicating which algorithm would be implemented. This would allow the system to compare the results of different algorithms. Rather than calling the delivery_algorithm(truck, time=None) function, I would call delivery_algorithm(truck, time=None, algorithm=nearest_neighbor) function to deliver the packages. The algorithm parameter would be used to determine which algorithm to use. The algorithm parameter would default to the greedy algorithm if no algorithm is specified.
+
+Next, I would also make the actual delivery algorithm more generic rather than have it specialized to our solution. The data that is passed into the delivery algorithm should be ready to use with a generic implementation of the algorithm. The same would go for other algorithms in the solution. The current implementation of the algorithm specifically calls methods from our truck and package classes. I would change the implementation to use generic data structures that can be used with any algorithm.
+
+Lastly, I would implement a GUI to make the experience of using the program more intuitive. Our program presents all the results in the console. The GUI would allow the user to select the algorithm to use and then run the program. The GUI would also allow the user to view the results of the program.
+
 ---
 
 ## Data Structure Verification
