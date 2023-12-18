@@ -1,12 +1,20 @@
 # Program Solution Overview
 
+Xavier Loera Flores
+
+ID: 011037676
+
+xloeraf@wgu.edu
+
+C950 Data Structures and Algorithms II
+
 ## Algorithm Justification
 
 The main core of the algorithm comes in two parts. The first part is the package loading into the trucks and the second part is the delivering of the packages using a nearest neighbor greedy algorithm.
 
-Packages loaded into the trucks in a way that would allow the first truck to delivery high priority packages first. The second truck would then deliver the truck 2 and bundled packages. The third truck would then deliver the delayed or wrong address packages. The remaining packages are distributed between truck 2 and truck 3 since the truck 1 driver needs to return to the hub to drive truck 3.
+Packages loaded into the trucks in a way that would allow the first truck to deliver high priority packages first. The second truck would then deliver the truck2 and bundled packages. The third truck would then deliver the delayed or wrong address packages. The remaining packages are distributed between truck 2 and truck 3 since the truck 1 driver needs to return to the hub to drive truck 3.
 
-The deliver packages part of the algorithm is a greedy algorithm. The algorithm will prioritize packages that have a deadline as its first working set and then move onto packages that don't have a deadline. The algorithm will find the closest package to the current location of the truck and deliver it. The algorithm will then find the next closest package and deliver it. This process will continue until all packages are delivered. The algorithm also takes into account the special package that needs to be delivered last since the delivery address needs to be corrected.
+The package delivery part of the algorithm is a greedy algorithm. The algorithm will prioritize packages that have a deadline as its first working set and then move onto packages that don't have a deadline. The algorithm will find the closest package to the current location of the truck and deliver it. The algorithm will then find the next closest package and deliver it. This process will continue until all packages are delivered. The algorithm also takes into account the special package that needs to be delivered last since the delivery address needs to be corrected.
 
 ### Algorithm Strengths
 
@@ -56,11 +64,13 @@ The delivery routing program uses a hash table data structure to store the packa
 
 #### Data Structure 1
 
-Instead of the adjacency matrix, the program could use a weighted adjacency list. The adjacency list would save on space at the cost of query time. Rather than storing vertexes a V x V grid O(V^2), the adjacency list would store a list that vertexes and edges of space O(V + E). The adjacency list would be a better choice if the program needed to save on space. However, query time would be slower since the program would need to iterate through the list to find the distance between two addresses with a speed of O(|V|) rather than having the constant O(1) lookup time of the adjacency matrix.
+Instead of the adjacency matrix, the program could use a weighted adjacency list. The adjacency list would save on space at the cost of query time. Rather than storing vertices a V x V grid O(V^2), the adjacency list would store a list with vertices and edges of space O(V + E). The adjacency list would be a better choice if the program needed to save on space. However, query time would be slower since the program would need to iterate through the list to find the distance between two addresses with a speed of O(|V|) rather than having the constant O(1) lookup time of the adjacency matrix.
 
 #### Data Structure 2
 
 Alternatively to the hash table used to lookup packages, we can utilize a binary search tree. The binary search tree would avoid the need for collision resolution at the cost of query time. However, query time would be slower since the program would need to traverse the tree to find the package with a speed of O(log n) rather than having the constant O(1) lookup time of the hash table.
+
+---
 
 ## Sources
 
