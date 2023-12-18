@@ -23,13 +23,15 @@ The supervisor should be able to see, at assigned points, the progress of each t
 
 ## A. Algorithm Overview
 
-Our solution to solve the WGUPS Delivery Routing Problem is to develop a delivery routing program that utilizes a greedy algorithm to find an efficient route and delivery distribution.
+Our solution to solve the WGUPS Delivery Routing Problem is to develop a delivery routing program that utilizes a greedy algorithm that uses a nearest neighbor algorithm to find an efficient route and delivery distribution.
 
-## B. Data Structure
-
-### 1. Data Structure Relationship to Components
+## B. Data Structure And Relationship To Components
+The package delivery program utilizes a hash table to store the delivery package data and a weighted adjacency matrix, or distance matrix to store the distances between addresses.The hash table data structure contains all the raw package data contained in a package object. The package object contains the package ID, delivery address, deadline, city, zip code, and weight. Alongside the package object, the hash table stores a delivery package object which contains the delivery status, delivery time if delivered, and address object. The distance matrix matrix stores the distances between the addresses. It can look up the distance between two addresses by using the address ID for the row and column index in constant time. The program will update the delivery package object in the hash table after determining which package to deliver first based on the closest address in the distance matrix. 
 
 ## C. Overview
+
+
+## D. Algorithm Justification
 
 ### 1. Algorithm Psuedocode
 
