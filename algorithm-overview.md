@@ -44,6 +44,50 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 ### 3. Space Time Complexity
 
+**main.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**HashTable.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**DistanceMatrix.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**System.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**Truck.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**DeliveryPackage.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+**Package.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**Address.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+
+
+**Utils.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |  
+
+
 ### 4. Solution scalability & adaptability
 
 ### 5. Software Design Efficiency & Maintainability
