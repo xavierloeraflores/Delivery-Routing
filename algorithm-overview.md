@@ -102,6 +102,13 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **DeliveryPackage.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
+|__init__|24| | |
+|print|35| | |
+|get_id|60| | |
+|set_status_to_delivered|64| | |
+|set_status_to_enroute|68| | |
+|set_delivered_time|72| | |
+|set_truck_id|76| | |
 
 **Package.py**
 | Method | Time Complexity | Space Complexity | Line Number |
