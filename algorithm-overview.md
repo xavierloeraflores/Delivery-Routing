@@ -47,6 +47,13 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **main.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
+|delivery_routing_system|12| | | 
+|load_packages|24| | |
+|delivery_algorithm|42| | |
+|identify_next_package|52| | |
+|interface_loop|79| | |
+|main|103| | |
+
 
 
 **HashTable.py**
