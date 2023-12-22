@@ -59,6 +59,12 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **HashTable.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
+|Node.__init__|3| | |
+|HashTable.__init__|11| | |
+|hash_key|19| | |
+|insert|24| | |
+|update|37| | |
+|get|48| | |
 
 
 **DistanceMatrix.py**
