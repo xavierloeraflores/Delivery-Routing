@@ -70,6 +70,9 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **DistanceMatrix.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
+|read_distance|4| | |
+|get_distance_between_addresses|24| | |
+|get_closest_address|31| | |
 
 
 **System.py**
