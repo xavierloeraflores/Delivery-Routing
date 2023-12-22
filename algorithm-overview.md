@@ -78,6 +78,8 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **System.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
+|create_system|17| | |
+|print_system|31| | |
 
 
 **Truck.py**
