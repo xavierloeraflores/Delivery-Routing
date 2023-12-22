@@ -85,6 +85,18 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **Truck.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
+|__init__|20| | |
+|load_package|40| | |
+|__str__|48| | |
+|set_depart_time|54| | |
+|attempt_depart|59| | |
+|get_undelivered_packages|66| | |
+|get_undelivered_packages_addresses|75| | |
+|deliver_package|82| | |
+|return_to_hub|96| | |
+|travel_for_time_in_min|105| | |
+|set_address_id|111| | |
+|get_priority_packages|115| | |
 
 
 **DeliveryPackage.py**
