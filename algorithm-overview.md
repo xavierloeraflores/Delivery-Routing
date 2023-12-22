@@ -113,7 +113,15 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **Package.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-
+|read_packages|4| | |
+|raw_packages_to_packages|14| | |
+|__init__|22| | |
+|has_deadline|38| | |
+|has_notes|42| | |
+|is_delayed|46| | |
+|is_truck_2|50| | |
+|has_wrong_address|54| | |
+|is_bundled|58| | |
 
 **Address.py**
 | Method | Time Complexity | Space Complexity | Line Number |
