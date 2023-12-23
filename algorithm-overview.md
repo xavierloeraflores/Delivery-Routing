@@ -135,16 +135,16 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **Utils.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|__init__|7|||
-|read|11|||
-|convert_time_str_to_time|20|||
-|convert_time_str_to_time_extended|26|||
-|print_red|31|||
-|print_green|35|||
-|print_blue|40|||
-|print_yellow|45|||
-|get_distance_traveled|49|||
-|get_time_traveled|53|||
+|__init__|7|O(1)|O(1)|
+|read|11|O(n)|O(n)|
+|convert_time_str_to_time|20|O(1)|O(1)|
+|convert_time_str_to_time_extended|26|O(1)|O(1)|
+|print_red|31|O(1)|O(1)|
+|print_green|35|O(1)|O(1)|
+|print_blue|40|O(1)|O(1)|
+|print_yellow|45|O(1)|O(1)|
+|get_distance_traveled|49|O(1)|O(1)|
+|get_time_traveled|53|O(1)|O(1)|
 
 ### 4. Solution scalability & adaptability
 
