@@ -113,24 +113,24 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **Package.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|read_packages|4|||
-|raw_packages_to_packages|14|||
-|__init__|22|||
-|has_deadline|38|||
-|has_notes|42|||
-|is_delayed|46|||
-|is_truck_2|50|||
-|has_wrong_address|54|||
-|is_bundled|58|||
+|read_packages|4|O(n)|O(n)|
+|raw_packages_to_packages|14|O(n)|O(n)|
+|__init__|22|O(1)|O(1)|
+|has_deadline|38|O(1)|O(1)|
+|has_notes|42|O(1)|O(1)|
+|is_delayed|46|O(1)|O(1)|
+|is_truck_2|50|O(1)|O(1)|
+|has_wrong_address|54|O(1)|O(1)|
+|is_bundled|58|O(1)|O(1)|
 
 **Address.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|read_addresses|4|||
-|get_address_list|14|||
-|__init__|26|||
-|get_address_by_id|36|||
-|get_address_by_street|45|||
+|read_addresses|4|O(n)|O(n)|
+|get_address_list|14|O(n)|O(n)|
+|__init__|26|O(1)|O(1)|
+|get_address_by_id|36|O(n)|O(1)|
+|get_address_by_street|45|O(n)|O(1)|
 
 **Utils.py**
 | Method | Time Complexity | Space Complexity | Line Number |
