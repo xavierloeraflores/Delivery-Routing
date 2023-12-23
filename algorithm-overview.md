@@ -126,16 +126,25 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **Address.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-
-
-**Utils.py**
-| Method | Time Complexity | Space Complexity | Line Number |
-| --- | --- | --- | --- |  
 |read_addresses|4| | |
 |get_address_list|14| | |
 |__init__|26| | |
 |get_address_by_id|36| | |
 |get_address_by_street|45| | |
+
+**Utils.py**
+| Method | Time Complexity | Space Complexity | Line Number |
+| --- | --- | --- | --- |
+|__init__|7| | |
+|read|11| | |
+|convert_time_str_to_time|20| | |
+|convert_time_str_to_time_extended|26| | |
+|print_red|31| | |
+|print_green|35| | |
+|print_blue|40| | |
+|print_yellow|45| | |
+|get_distance_traveled|49| | |
+|get_time_traveled|53| | |
 
 ### 4. Solution scalability & adaptability
 
