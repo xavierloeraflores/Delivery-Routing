@@ -47,104 +47,104 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **main.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|delivery_routing_system|12| | | 
-|load_packages|24| | |
-|delivery_algorithm|42| | |
-|identify_next_package|52| | |
-|interface_loop|79| | |
-|main|103| | |
+|delivery_routing_system|12||| 
+|load_packages|24|||
+|delivery_algorithm|42|||
+|identify_next_package|52|||
+|interface_loop|79|||
+|main|103|||
 
 
 
 **HashTable.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|Node.__init__|3| | |
-|HashTable.__init__|11| | |
-|hash_key|19| | |
-|insert|24| | |
-|update|37| | |
-|get|48| | |
+|Node.__init__|3|||
+|HashTable.__init__|11|||
+|hash_key|19|||
+|insert|24|||
+|update|37|||
+|get|48|||
 
 
 **DistanceMatrix.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|read_distance|4| | |
-|get_distance_between_addresses|24| | |
-|get_closest_address|31| | |
+|read_distance|4|||
+|get_distance_between_addresses|24|||
+|get_closest_address|31|||
 
 
 **System.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|create_system|17| | |
-|print_system|31| | |
+|create_system|17|||
+|print_system|31|||
 
 
 **Truck.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|__init__|20| | |
-|load_package|40| | |
-|__str__|48| | |
-|set_depart_time|54| | |
-|attempt_depart|59| | |
-|get_undelivered_packages|66| | |
-|get_undelivered_packages_addresses|75| | |
-|deliver_package|82| | |
-|return_to_hub|96| | |
-|travel_for_time_in_min|105| | |
-|set_address_id|111| | |
-|get_priority_packages|115| | |
+|__init__|20|||
+|load_package|40|||
+|__str__|48|||
+|set_depart_time|54|||
+|attempt_depart|59|||
+|get_undelivered_packages|66|||
+|get_undelivered_packages_addresses|75|||
+|deliver_package|82|||
+|return_to_hub|96|||
+|travel_for_time_in_min|105|||
+|set_address_id|111|||
+|get_priority_packages|115|||
 
 
 **DeliveryPackage.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|__init__|24| | |
-|print|35| | |
-|get_id|60| | |
-|set_status_to_delivered|64| | |
-|set_status_to_enroute|68| | |
-|set_delivered_time|72| | |
-|set_truck_id|76| | |
+|__init__|24|||
+|print|35|||
+|get_id|60|||
+|set_status_to_delivered|64|||
+|set_status_to_enroute|68|||
+|set_delivered_time|72|||
+|set_truck_id|76|||
 
 **Package.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|read_packages|4| | |
-|raw_packages_to_packages|14| | |
-|__init__|22| | |
-|has_deadline|38| | |
-|has_notes|42| | |
-|is_delayed|46| | |
-|is_truck_2|50| | |
-|has_wrong_address|54| | |
-|is_bundled|58| | |
+|read_packages|4|||
+|raw_packages_to_packages|14|||
+|__init__|22|||
+|has_deadline|38|||
+|has_notes|42|||
+|is_delayed|46|||
+|is_truck_2|50|||
+|has_wrong_address|54|||
+|is_bundled|58|||
 
 **Address.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|read_addresses|4| | |
-|get_address_list|14| | |
-|__init__|26| | |
-|get_address_by_id|36| | |
-|get_address_by_street|45| | |
+|read_addresses|4|||
+|get_address_list|14|||
+|__init__|26|||
+|get_address_by_id|36|||
+|get_address_by_street|45|||
 
 **Utils.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|__init__|7| | |
-|read|11| | |
-|convert_time_str_to_time|20| | |
-|convert_time_str_to_time_extended|26| | |
-|print_red|31| | |
-|print_green|35| | |
-|print_blue|40| | |
-|print_yellow|45| | |
-|get_distance_traveled|49| | |
-|get_time_traveled|53| | |
+|__init__|7|||
+|read|11|||
+|convert_time_str_to_time|20|||
+|convert_time_str_to_time_extended|26|||
+|print_red|31|||
+|print_green|35|||
+|print_blue|40|||
+|print_yellow|45|||
+|get_distance_traveled|49|||
+|get_time_traveled|53|||
 
 ### 4. Solution scalability & adaptability
 
