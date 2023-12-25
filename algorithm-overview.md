@@ -29,9 +29,6 @@ Our solution to solve the WGUPS Delivery Routing Problem is to develop a deliver
 The package delivery program utilizes a hash table to store the delivery package data and a weighted adjacency matrix, or distance matrix to store the distances between addresses.The hash table data structure contains all the raw package data contained in a package object. The package object contains the package ID, delivery address, deadline, city, zip code, and weight. Alongside the package object, the hash table stores a delivery package object which contains the delivery status, delivery time if delivered, and address object. The distance matrix matrix stores the distances between the addresses. It can look up the distance between two addresses by using the address ID for the row and column index in constant time. The program will update the delivery package object in the hash table after determining which package to deliver first based on the closest address in the distance matrix. 
 
 ## C. Overview
-
-
-## D. Algorithm Justification
 The greedy nearest neighbor algorithm is a viable solution to the delivery routing program because it can efficiently find an optimal route and delivery distribution. The nearest neighbor algorithm is a greedy algorithm that finds the shortest path between two points. The nearest neighbor algorithm is a greedy algorithm because it makes the locally optimal choice at each step.
 
 ### 1. Algorithm Psuedocode
@@ -200,8 +197,10 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 |get_time_traveled|53|O(1)|O(1)|
 
 ### 4. Solution scalability & adaptability
+ 
 
 ### 5. Software Design Efficiency & Maintainability
+The software was designed in a way that is efficient and maintainable. The software is efficient because it utilizes a greedy algorithm that finds the shortest path between two points. The software is maintainable because it is written in a way that is easy to understand and can be easily modified to meet future requirements. The delivery routing system features many functions that are modular and can be easily modified to meet future requirements. The delivery routing system also features many comments that explain the purpose of each function and the logic behind the code. 
 
 ### 6. Hash Table Strengths & Weaknesses
 
