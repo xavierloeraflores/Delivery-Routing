@@ -47,13 +47,12 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **main.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|delivery_routing_system|12||| 
-|load_packages|24|||
-|delivery_algorithm|42|||
-|identify_next_package|52|||
-|interface_loop|79|||
-|main|103|||
-
+|delivery_routing_system|12|O(n^2)|O(n)| 
+|load_packages|24|O(n)|O(n)|
+|delivery_algorithm|42|O(n^2)|O(n)|
+|identify_next_package|52|O(n)|(n)|
+|interface_loop|79|O(n^2)|(n)|
+|main|103|O(n^2)|O(n)|
 
 
 **HashTable.py**
@@ -110,6 +109,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 |set_delivered_time|72|O(1)|O(1)|
 |set_truck_id|76|O(1)|O(1)|
 
+
 **Package.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
@@ -123,6 +123,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 |has_wrong_address|54|O(1)|O(1)|
 |is_bundled|58|O(1)|O(1)|
 
+
 **Address.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
@@ -131,6 +132,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 |__init__|26|O(1)|O(1)|
 |get_address_by_id|36|O(n)|O(1)|
 |get_address_by_street|45|O(n)|O(1)|
+
 
 **Utils.py**
 | Method | Time Complexity | Space Complexity | Line Number |
