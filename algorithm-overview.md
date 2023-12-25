@@ -59,27 +59,27 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **HashTable.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|Node.__init__|3|||
-|HashTable.__init__|11|||
-|hash_key|19|||
-|insert|24|||
-|update|37|||
-|get|48|||
+|Node.__init__|3|O(1)|O(1)|
+|HashTable.__init__|11|O(n)|O(n)|
+|hash_key|19|O(1)|O(1)|
+|insert|24|O(n)|O(1)|
+|update|37|O(n)|O(1)|
+|get|48|O(n)|O(1)|
 
 
 **DistanceMatrix.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|read_distance|4|||
-|get_distance_between_addresses|24|||
-|get_closest_address|31|||
+|read_distance|4|O(n)|O(n)|
+|get_distance_between_addresses|24|O(1)|O(1)|
+|get_closest_address|31|O(n)|O(1)|
 
 
 **System.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|create_system|17|||
-|print_system|31|||
+|create_system|17|O(n^2)|O(n)|
+|print_system|31|O(n^2)|O(n)|
 
 
 **Truck.py**
