@@ -47,12 +47,12 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 **main.py**
 | Method | Time Complexity | Space Complexity | Line Number |
 | --- | --- | --- | --- |
-|delivery_routing_system|12|O(n^2)|O(n)| 
+|delivery_routing_system|12|O(n^2log(n)|O(n)| 
 |load_packages|24|O(n)|O(n)|
-|delivery_algorithm|42|O(n^2)|O(n)|
-|identify_next_package|52|O(n)|(n)|
-|interface_loop|79|O(n^2)|(n)|
-|main|103|O(n^2)|O(n)|
+|delivery_algorithm|42|O(n^2log(n))|O(n)|
+|identify_next_package|52|log(n)|(n)|
+|interface_loop|79|O(n^2log(n))|(n)|
+|main|103|O(n^2log(n))|O(n)|
 
 
 **HashTable.py**
