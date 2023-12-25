@@ -36,6 +36,57 @@ The greedy nearest neighbor algorithm is a viable solution to the delivery routi
 
 ### 1. Algorithm Psuedocode
 
+function delivery_routing_system(time):
+- Initialize the trucks
+- Initialize the current time
+- Run delivery_algorithm for the truck1 and truck2
+- Compare the truck1 and truck2 return times
+- If truck1 returns first:
+    - Run delivery_algorithm for truck3 with the return time of truck1
+- Else:
+    - Run delivery_algorithm for truck3 with the return time of truck2
+- print the system
+
+function load_packages:
+- Get the list of packages
+- For each package in the list:
+    - Create a delivery package from the package
+    - Get the index of the delivery package
+    - If the package is delayed or the index is 9:
+        - Load the package onto truck 3
+    - Else if the package is for truck 2 or the package is bundled or the index is 19:
+        - Load the package onto truck 2
+    - Else if the package has a deadline:
+        - Load the package onto truck 1
+    - Else:
+        - If the load of truck 2 is less than the load of truck 3:
+            - Load the package onto truck 2
+        - Else:
+            - Load the package onto truck 3
+
+function delivery_algorithm(truck, time):
+- Attempt to depart with the truck
+- Identify the next package to deliver
+- While the time is None or the current time is less than the truck's time and there is a next package:
+    - Deliver the package
+    - Identify the next package to deliver
+- Return the truck to the hub
+- Return the truck's time
+
+function identify_next_package(truck):
+- Initialize a flag for wrong address package as False
+- Get the list of undelivered packages from the truck
+- Get the current address ID of the truck
+- Initialize lists for undelivered packages addresses and priority packages addresses
+- For each package in the undelivered packages:
+    - Get the package from the hash table
+    - Get the address ID of the package
+    - If the package ID is 9, set the wrong address package flag to True
+    - Else if the package has a deadline, add the address ID to the priority packages addresses list
+    - Else, add the address ID to the undelivered packages addresses list
+- Get the closest address from the undelivered packages addresses to the current address
+- If there are priority packages, get the closest address from the priority packages addresses to the current address
+
 ### 2. Programming Environment
 
 The programming environment features Python version 3.8.9 which is the ninth maintenance release of Python 3.8 released on April 2, 2021.
