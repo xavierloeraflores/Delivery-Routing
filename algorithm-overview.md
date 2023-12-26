@@ -31,7 +31,7 @@ The package delivery program utilizes a hash table to store the delivery package
 ## C. Overview
 The greedy nearest neighbor algorithm is a viable solution to the delivery routing program because it can efficiently find an optimal route and delivery distribution. The nearest neighbor algorithm is a greedy algorithm that finds the shortest path between two points. The nearest neighbor algorithm is a greedy algorithm because it makes the locally optimal choice at each step.
 
-### 1. Algorithm Psuedocode
+### 1. Algorithm Pseudocode
 
 function delivery_routing_system(time):
 - Initialize the trucks
@@ -93,7 +93,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 ### 3. Space Time Complexity
 
 **main.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |delivery_routing_system|12|O(n^2log(n)|O(n)| 
 |load_packages|24|O(n)|O(n)|
@@ -104,7 +104,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **HashTable.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |Node.__init__|3|O(1)|O(1)|
 |HashTable.__init__|11|O(n)|O(n)|
@@ -115,7 +115,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **DistanceMatrix.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |read_distance|4|O(n)|O(n)|
 |get_distance_between_addresses|24|O(1)|O(1)|
@@ -123,14 +123,14 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **System.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |create_system|17|O(n^2)|O(n)|
 |print_system|31|O(n^2)|O(n)|
 
 
 **Truck.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |__init__|20|O(1)|O(1)|
 |load_package|40|O(1)|O(1)|
@@ -147,7 +147,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **DeliveryPackage.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |__init__|24|O(1)|O(1)|
 |print|35|O(1)|O(1)|
@@ -159,7 +159,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **Package.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |read_packages|4|O(n)|O(n)|
 |raw_packages_to_packages|14|O(n)|O(n)|
@@ -173,7 +173,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **Address.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |read_addresses|4|O(n)|O(n)|
 |get_address_list|14|O(n)|O(n)|
@@ -183,7 +183,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 
 
 **Utils.py**
-| Method | Time Complexity | Space Complexity | Line Number |
+| Method | Line Number | Time Complexity | Space Complexity |
 | --- | --- | --- | --- |
 |__init__|7|O(1)|O(1)|
 |read|11|O(n)|O(n)|
