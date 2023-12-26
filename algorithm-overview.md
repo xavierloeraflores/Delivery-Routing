@@ -197,7 +197,7 @@ The programming environment is being ran within MacOS Monterey Version 12.0.1 on
 |get_time_traveled|53|O(1)|O(1)|
 
 ### 4. Solution scalability & adaptability
- 
+The solution as a whole has a time complexity of O(n^2log(n)) as well as a space complexity of O(n). As the number of packages increases, the time complexity for the entire program should also increase at a rate of n^2log(n) while the space will increase at a rate of n. The program isn't too adaptable to an increased amount of packages since the three trucks may not have enough time to deliver all the packages on time. The program isn't automatically written to adapt to the addition of more trucks or drivers since the 3 trucks and 2 drivers are hard programmed into the the delivery routing system function. 
 
 ### 5. Software Design Efficiency & Maintainability
 The software was designed in a way that is efficient and maintainable. The software is efficient because it utilizes a greedy algorithm that finds the shortest path between two points. The software is maintainable because it is written in a way that is easy to understand and can be easily modified to meet future requirements. The delivery routing system features many functions that are modular and can be easily modified to meet future requirements. The delivery routing system also features many comments that explain the purpose of each function and the logic behind the code. 
